@@ -1,23 +1,33 @@
-document.querySelectorAll('.item img').forEach(item => {
-    item.addEventListener('click', function(e) {
-        e.stopPropagation();  // stops multiple 'propergation'/calls of the same event from occurring
+// Store containers reference for better performance
+const allContainers = document.querySelectorAll('.item-container');
 
-
+// Select all images within items
+document.querySelectorAll('.item img').forEach(imgElement => {
+    imgElement.addEventListener('click', function(e) {
+        e.stopPropagation();  // stops multiple propagation/calls of the same event from occurring
+        e.preventDefault();
         // Get the text container within this item
-        const item = this.parentElement;
-        const textContainer = item.querySelector('.item-container');
+        const parentItem = this.parentElement;
+        const textContainer = parentItem.querySelector('.item-container');
         
-        // Toggle the active class on the clicked item's text container
+        
+        // Close other text containers using cached selector
+        // allContainers.forEach(container => {
+        //     if (container !== textContainer) {
+        //         container.classList.remove('active');
+        //     }
+        // });
+
+        // Wait for any CSS transitions to complete (adjust timeout as needed)
+        setTimeout(() => {
+            // Safely scroll to target element if it exists
+            imgElement.scrollIntoView(true, { behavior: "auto"});
+            // Toggle the active class on the clicked item's text container
+        }, 300);// Adjust this delay to match your CSS transition duration
         textContainer.classList.toggle('active');
-        
-        // Close other text containers
-        document.querySelectorAll('.item-container').forEach(container => {
-            if (container !== textContainer) {
-                container.classList.remove('active');
-            }
-        });
     });
-})
+});
+
 
 
 
@@ -43,7 +53,7 @@ scrollToTopBtn.addEventListener("click", function() {
 });
 
 
-// Modular 
+// Modular  (Image window)
 const modal = document.querySelector('.modal');
 const modalImg = document.querySelector('.modal-content');
 
