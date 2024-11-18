@@ -29,8 +29,6 @@ document.querySelectorAll('.item img').forEach(imgElement => {
 });
 
 
-
-
 // Get the button
 const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
@@ -82,49 +80,3 @@ modalImg.addEventListener('click', (e) => {
 });
 
 
-
-
-// Create an Intersection Observer to handle scroll-based animations
-const createScrollFadeAnimation = () => {
-    const observerOptions = {
-        root: null, // use viewport as root
-        threshold: [0.2, 0.9], // trigger at both 10% and 90% visibility
-        rootMargin: '-10% 0px' // slightly adjust when animations trigger
-    };
-
-    const handleScrollAnimation = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            // Initial fade in
-            if (entry.isIntersecting && entry.intersectionRatio >= 0.2) {
-                entry.target.style.opacity = '0';
-                entry.target.style.transform = 'translateY(5vh)';
-                
-                // Trigger fade-in animation
-                requestAnimationFrame(() => {
-                    entry.target.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                });
-            } 
-            // Fade out when element leaves viewport
-            else if (!entry.isIntersecting && entry.intersectionRatio <= 0.2) {
-                // Trigger fade-out animation
-                requestAnimationFrame(() => {
-                    entry.target.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-                    entry.target.style.opacity = '0';
-                    entry.target.style.transform = 'translateY(-5vh)';
-                });
-            }
-        });
-    }, observerOptions);
-
-    // Observe all image items
-    document.querySelectorAll('.image-item').forEach(item => {
-        // Set initial styles
-        item.style.opacity = '0';
-        handleScrollAnimation.observe(item);
-    });
-};
-
-// Initialize the animation when DOM is loaded
-document.addEventListener('DOMContentLoaded', createScrollFadeAnimation);
