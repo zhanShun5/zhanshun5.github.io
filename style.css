@@ -1,5 +1,6 @@
 :root{
     color-scheme: light dark;
+    --transition-speed: 0.3s;
 }
 
 html {
@@ -7,31 +8,46 @@ html {
 }
 
 body {
-    background-color: light-dark(#f5f4f0, #21242b);
-    color: light-dark(#21242b, #f5f4f0);
+    background-color: #F5F2DB;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
-    margin: 0;
     padding: 0 5%;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
+    min-height: 100vh;
+    
+    color: #D0343A;
+
+    /* Improved performance */
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
 }
 
-.main-content {
-    flex: 1;
-    padding: 20px;
+.horizontal-line {
+    border: none;
+    height: 2px;
+    background-color: #D0343A; /* Line color from the image */
+    width: 100%;
 }
 
 .banner {
-    background-color: #222;
-    text-align: center;
-    padding: 20px;
+    background-color: #D0343A ;
+    padding: 50px;
+    margin-bottom: 10px;
+    will-change: background-color;
+}
+
+.banner .title{
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    font-size: medium;
+    vertical-align: middle;
+    margin-left: 25%;
+    margin-right: 25%;
     margin-bottom: 10px;
 }
 
-
 svg text{
+    margin-top: 100px;
     text-align: center;
     fill: transparent;
     stroke: #fff;
@@ -39,6 +55,7 @@ svg text{
     stroke-dasharray: 150;
     stroke-dashoffset: 150;
     animation: textAnimation 4s ease-in-out 1 forwards;
+    will-change: fill, stroke-dashoffset;
 }
 
 @keyframes textAnimation {
@@ -66,81 +83,89 @@ svg text{
 }
 
 .list .item{   /*default state that items ins a list are*/
-    transition: .3s ease-in-out;
-    filter: brightness(.3);
-
+    transition: var(--transition-speed) ease-in-out;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    position: relative
+    position: relative;
+    will-change: transform, filter;
 }
 
-
 .item img {
-    max-width: auto;
-    height: auto;
+    max-height: 100%;
+    margin-top: 10px;
     cursor: pointer;   /* changes how the mouse looks*/
 }
 
 .list .item:hover{  /*state that itens are in when hovered over*/
-    box-shadow: 12px 12px 12px rgba(0, 0, 0, .1) inset,
-    -10px -10px -10px white inset;
-    
-    filter: brightness(1);
-    transform: scale(2.1);
     transform: translateX(80px);
 }
 
 /* using '+*' to point to the item to the right of the item being hovered. '*' only points to an item if there is a valid target.  */
 
 .list .item:hover + * { 
-    filter: brightness(.2);
     transform: translateX(25px);
 }
 /* using 'has(+*)' to point to the item to the left of the item being hovered. 'has(+*)' only points to an item if there is a valid target.  */
 
 .list .item:has(+ *:hover) { 
-    filter: brightness(.2);
-    transform: translateX(25px);
+    transform: translateX(-25px);
 }
 
+/* Item Preview */
+.item-preview {
+    
+    background-color: #f5f1d7;
+
+    transition: background-color 0.3s ease;
+
+    border: 2px solid #D0343A ;
+
+    max-height: 100%;
+    margin-top: 10px;
+    width: clamp(800px, 100%, 1400px);
+    transform: translateX(75px);
+    height: clamp(800px, 100%, 1600px);
+}
+
+.item-preview .description{
+    opacity: 1;
+    font-size: medium;
+    font-style: italic;
+}
 
 /* item containers that are in the images*/
 .item-container {
-    background-color: #111;
+    background-color: #f5f1d7;
 
     padding: 20px;
     margin-top: 10px;
 
+    border: 2px solid #D0343A ;
 
-    border: 1px solid #0f0;
-    box-sizing: border-box;
     opacity: 0;
     max-height: 0;
     overflow: hidden;
-    transition: all 0.25s ease-in-out;
-
+    transition: all var(--transition-speed) ease-in-out;
+    will-change: opacity, max-height, transform;
     z-index: 100;
 }
 
 .item-container.active {
+    filter: brightness(1);
     transform: translateX(-80px);
     opacity: 1;
-    max-height: 100%; 
+    max-height: 100%;
     margin-top: 10px;
-    max-width:  100%;
-    width: clamp(800px, 100vm, 1600px);
-    height: clamp(800px, 100vm, 1600px);
+    width: clamp(800px, 100%, 1600px);
+    height: clamp(800px, 100%, 1600px);
 }
 
 .item-container p {
     margin: 0;
-    transition: transform 0.25s ease;
     transform: translateY(20px);
 }
-.item-container.active p {
-    transform: translateY(0);
-}
+
 
 
 /* Image container */
@@ -154,38 +179,56 @@ svg text{
     justify-content: space-evenly;
     gap: 30px;
     margin-left: 1%;
-    margin-right: 1%; 
-
-}
-
-.image-container:hover figure {
-    opacity: 0.7;
+    margin-right: 1%;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
 }
 
 .image-item:hover figcaption {
-    opacity: 0.7;
+    opacity: 0.6;
+}
+
+.image-item:hover {
+    transform: scale(1.0075);
 }
 
 .image-item figcaption {
     margin-top: 8px;
-}
-
-
-
-.image-container {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    transition: opacity 0.3s ease;
 }
 
 .image-item{  /* the images */
-    opacity: 0;
-    will-change: opacity, transform;
-    backface-visibility: hidden;
+    opacity: 1;
     transform-style: preserve-3d;
     perspective: 1000px;
+    transition: transform 0.3s ease;
 }
 
+/* text container */
+
+.text-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20rem;
+    margin-bottom: 2rem;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+
+.text-container .title {
+    flex: 1;
+    margin-top: 2%;
+    font-size: 2rem;
+    font-weight: 500;
+    max-width:300px;
+}
+
+.text-container .description {
+    flex:  2;
+    margin-top: 20px;
+}
 
  /* Modal styles for show image upon clicking on an image */
  .modal {
@@ -199,9 +242,8 @@ svg text{
     z-index: 1000;
     padding: 2rem;
     cursor: pointer;
-    overflow: auto;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: all var(--transition-speed) ease-in-out;
 }
 
 .modal.active {
@@ -211,12 +253,6 @@ svg text{
     align-items: center;
 }
 
-.modal-content {
-    max-width: 90%;
-    max-height: 90vh;
-    object-fit: contain;
-    border-radius: 4px;
-}
 
 .modal-close {
     position: fixed;
@@ -242,32 +278,7 @@ svg text{
 }
 
 
-/* text container */
 
-.text-container {
-    display: flex;
-    flex-direction: row;
-    gap: 20rem;
-    margin-bottom: 2rem;
-    margin-left: 3%;
-    margin-right: 3%;
-}
-
-
-.title {
-    flex: 1;
-    margin-top: 2%;
-    font-size: 2rem;
-    font-weight: 500;
-    max-width:300px;
-    color: #ccc;
-}
-
-.description {
-    flex:  2;
-    margin-top: 20px;
-    color: #ccc;
-}
 
 /* Scroll to the top button */ 
 
@@ -284,7 +295,7 @@ svg text{
     cursor: pointer;
     visibility: hidden;
     opacity: 0;
-    transition: 0.3s ease-in-out;
+    transition: all var(--transition-speed) ease-in-out;
     z-index: 99;
 }
 
@@ -304,4 +315,19 @@ svg text{
     font-size: 24px;
 }
 
+/* Add basic responsive support */
+@media (max-width: 768px) {
+    .item-container.active {
+        transform: none;
+        width: 100%;
+    }
+}
 
+.end-footer{
+    color: #d03439d0;
+    background-color: #F5F2DB;
+    border: 2px solid #D0343A;;
+    padding: 1rem;
+    font-size: smaller;
+    margin-top: 4rem;
+}
