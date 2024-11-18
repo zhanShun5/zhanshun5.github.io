@@ -25,13 +25,11 @@ body {
 
 .banner {
     background-color: #222;
+    text-align: center;
     padding: 20px;
     margin-bottom: 10px;
 }
 
-.banner .title{
-    transform: translateX(80px);
-}
 
 svg text{
     text-align: center;
@@ -85,6 +83,9 @@ svg text{
 }
 
 .list .item:hover{  /*state that itens are in when hovered over*/
+    box-shadow: 12px 12px 12px rgba(0, 0, 0, .1) inset,
+    -10px -10px -10px white inset;
+    
     filter: brightness(1);
     transform: scale(2.1);
     transform: translateX(80px);
@@ -103,20 +104,6 @@ svg text{
     transform: translateX(25px);
 }
 
-.item-preview {
-    background-color: #fc0000;
-
-    padding: 20px;
-    margin-top: 10px;
-    max-height: 100%;
-    max-width: 100%;
-
-    border: 1px solid #0f0;
-    box-sizing: border-box;
-    opacity: 1;
-
-    z-index: 100;
-}
 
 /* item containers that are in the images*/
 .item-container {
@@ -168,30 +155,16 @@ svg text{
     gap: 30px;
     margin-left: 1%;
     margin-right: 1%; 
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+
 }
 
-
-.image-item{  /* the images */
-    display: block;  /* ensure proper display */
-    opacity: 1;     /* make fully visible by default */
-    transform: none; /* remove any transform */
-    transition: transform 0.3s ease-in-out; /* optional: for smooth hover effects */
-    max-width: 100%; /* ensure images fit their container */
-    height: auto;    /* maintain aspect ratio */
-}
-
-.image-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* .image-item:hover figcaption {
+.image-container:hover figure {
     opacity: 0.7;
-} */
+}
+
+.image-item:hover figcaption {
+    opacity: 0.7;
+}
 
 .image-item figcaption {
     margin-top: 8px;
@@ -199,6 +172,19 @@ svg text{
 
 
 
+.image-container {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-item{  /* the images */
+    opacity: 0;
+    will-change: opacity, transform;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
 
 
  /* Modal styles for show image upon clicking on an image */
