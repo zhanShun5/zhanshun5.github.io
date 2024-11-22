@@ -20,5 +20,23 @@ document.querySelectorAll('.img_container img').forEach(imgElement => {
 });
 
 
+// -----------------------------------  Scroll to the top button --------------------------
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+// Optimized scroll handler
+function handleScroll() {
+    const scrolled = document.documentElement.scrollTop > 100;
+    scrollToTopBtn.classList.toggle("visible", scrolled);
+}
+
 // Use passive event listener for better scroll performance
 window.addEventListener('scroll', handleScroll, { passive: true });
+
+
+// Scroll to top with smooth behavior
+scrollToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
