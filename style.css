@@ -25,6 +25,8 @@ img{
 .horizontal_line {
     border: none;
     height: 2px;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
     background-color: #C6C5B9; /* Line color from the image */
     width: 100%;
 }
@@ -196,8 +198,8 @@ img{
 
 .content_container.active{
     opacity: 1;
-    padding: 5rem;
-    margin-top: 5rem;
+    padding: 2rem;
+    margin-top: 1rem;
 
     max-height: 100%;
 }
@@ -247,7 +249,7 @@ img{
     align-items: center;
     justify-content: space-evenly;
     
-    padding: 10rem;
+    padding: 5.5rem;
     gap: 40px;
 
     margin-left: 1%;
