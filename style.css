@@ -1,5 +1,24 @@
+:root{
+    color-scheme: light dark;
+    --transition-speed: 0.3s;
+}
+
 body {
     background-color: #000a1f;
+    display: flex;
+    flex-direction: column;
+
+    color: #260051;
+
+    /* Improved performance */
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .img_container {
@@ -28,6 +47,7 @@ body {
     transition-delay: 200ms;
     width: 25%;
     transform: scale(1.15) translateZ(0);
+    cursor: pointer;
 }
 
 .img_container img:hover + img,
@@ -38,4 +58,131 @@ body {
 .img_container img:has(+ * + * + * + *:hover) {
     filter: brightness(0.3s) saturate(0), contrast(1.2) blur(50px);
     transform: scale(.9);
+}
+
+.horizontal_line {
+    border: none;
+    height: 2px;
+    background-color: #D0343A; /* Line color from the image */
+    width: 100%;
+}
+
+
+.content_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    background-color: #f5f1d7;
+
+    padding: 5rem;
+    margin-top: 5rem;
+    width: clamp(800px, 100%, 1600px);
+    height: clamp(800px, 100%, 1600px);
+
+    border: 2px solid #D0343A ;
+
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+
+
+
+    transition: all var(--transition-speed) ease-in-out;
+    will-change: opacity, max-height;
+    z-index: -1;
+}
+
+/* Add basic responsive support */
+@media (max-width: 768px) {
+    .content_container.active {
+        transform: none;
+        width: 100%;
+    }
+}
+
+.content_container.active{
+    opacity: 1;
+    max-height: 100%;
+}
+
+.content_container .text_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    gap: 25rem;
+    margin-bottom: 2rem;
+    margin-left: 3%;
+    margin-right: 3%;
+
+
+}
+.content_container .text_container .title {
+    flex: 1;
+    margin-top: 2%;
+    font-size: 4rem;
+    font-weight: 500;
+    max-width:4cqh;
+
+    font-family: Georgia, 'Times New Roman', Times, serif ;
+}
+
+.content_container .text_container .description {
+    flex:  2;
+    margin-top: 20px;
+
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.content_container .image_container{
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    
+    padding: 10rem;
+    gap: 40px;
+
+    margin-left: 1%;
+    margin-right: 1%;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+}
+
+.content_container .image_container .image_figure_item:hover figcaption {
+    opacity: 0.6;
+}
+
+.content_container .image_container .image_figure_item:hover {
+    transform: scale(1.0075);
+}
+
+.content_container .image_container .image_figure_item figcaption {
+    margin-top: 8px;
+    transition: opacity 0.3s ease;
+}
+
+.content_container .image_container .image_figure_item{  /* the images */
+    opacity: 1;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+}
+
+
+
+
+.end-footer{
+    background-color: #F5F2DB;
+    border: 2px solid #D0343A;;
+    padding: 1rem;
+    font-size: smaller;
+    margin-top: 4rem;
+
+    width: clamp(800px, 100%, 1600px);
+    height: clamp(800px, 100%, 1600px);
 }
