@@ -341,7 +341,7 @@ img{
 .content_container .image_container{
     display: grid; 
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    gap: 5rem;
     margin-bottom: 2rem;
 
     will-change: transform;
@@ -387,12 +387,12 @@ img{
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    visibility: visible;
+    visibility: hidden;
     cursor: pointer;
 
-    opacity: 1;
+    opacity: 0;
     transition: all var(--transition-speed) ease-in-out;
-    z-index: 101;
+    z-index: 111;
 }
 
 .scrollToTopBtn:hover {
