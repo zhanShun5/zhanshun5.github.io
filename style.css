@@ -1,9 +1,39 @@
-:root{
+:root {
     color-scheme: light dark;
     --transition-speed: 0.3s;
+    
+    /* Color palette */
+    --color-primary: #5863F8;
+    --color-background: #000a1f;
+    --color-text: #1F1500;
+    --color-accent: #C6C5B9;
+    --color-footer: #9E7682;
+    
+    /* Typography */
+    --font-size-base: 1rem;
+    --font-size-lg: 1.2rem;
+    --font-size-xl: 2rem;
+    --font-size-2xl: 3rem;
+    --font-size-3xl: 4rem;
+    --font-size-4xl: 5rem;
+    
+    /* Spacing */
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    
+    /* Border radius */
+    --border-radius-sm: 0.5rem;
+    --border-radius-md: 1rem;
+    --border-radius-lg: 2rem;
+
+    --container-max-width: 1536px;
 }
 
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -21,49 +51,49 @@
 }
 
 .container {
-    max-width: 1536px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
+    width: min(100% - 2rem, var(1536px, --container-max-width));
+    margin-inline: auto;
+    padding-inline: var(--spacing-sm);
+}
   
   /* 2xl */
-  @media (max-width: 1536px) {
-    .container {
-      max-width: 1280px;
-    }
 
-    .content_container .text_container .title,
-    .about_me_container .AM_title header,
+@media (max-width: 1536px) {
+    .container {
+        max-width: 1280px;
+    }
+    .about_me_container .AM_title,
     .img_container_header {
         font-size: 5rem;
     }
-    
-  }
-  
-  /* xl */
-  @media (max-width: 1280px) {
-    .container {
-      max-width: 1024px;
+    header{
+        font-size: 1rem;
     }
-    .content_container .text_container .title,
-    .about_me_container .AM_title header,
+}
+
+
+/* xl */
+@media (max-width: 1280px) {
+    .container {
+        max-width: 1024px;
+    }
+    .about_me_container .AM_title,
     .img_container_header {
         font-size: 4rem;
     }
-  }
-  
-  /* lg */
-  @media (max-width: 1024px) {
+}
+
+
+/* lg */
+@media (max-width: 1024px) {
     .container {
-      max-width: 768px;
+        max-width: 768px;
     }
 
     .content_container .text_container .title,
     .about_me_container .AM_title header,
     .img_container_header {
-        font-size: 3rem;
+        font-size: 3.5rem;
     }
 
     body{
@@ -72,43 +102,43 @@
     .content_container .image_container{
         grid-template-columns: 1fr;
     }
-  }
-  
-  /* md */
-  @media (max-width: 768px) {
+}
+
+/* md */
+@media (max-width: 768px) {
     .container {
-      max-width: 640px;
+        max-width: 640px;
     }
     .content_container .text_container .title,
     .about_me_container .AM_title header,
     .img_container_header {
-        font-size: 2rem;
+        font-size: 3rem;
     }
-  }
-  
-  /* sm */
-  @media (max-width: 640px) {
+}
+
+/* sm */
+@media (max-width: 640px) {
     .container {
-      max-width: 475px;
+        max-width: 475px;
     }
     .content_container .text_container .title,
     .about_me_container .AM_title header,
     .img_container_header {
-        font-size: 1rem;
+        font-size: 3rem;
     }
-  }
-  
-  /* xs */
-  @media (max-width: 475px) {
-    .container {
-      width: 100%;
-    }
-    .content_container .text_container .title,
-    .about_me_container .AM_title header,
-    .img_container_header {
-        font-size: 1rem;
-    }
-  }
+}
+
+/* xs */
+@media (max-width: 475px) {
+.container {
+    width: 100%;
+}
+.content_container .text_container .title,
+.about_me_container .AM_title header,
+.img_container_header {
+    font-size: 3rem;
+}
+}
 
 
 body {
@@ -161,7 +191,7 @@ img{
       "Background Background Contacts";
     
     background-color: #181115;
-    color: #5863F8;
+    color: #51beef;
 
     border-radius: 1rem 1rem 2rem 2rem / 1rem 1rem 1rem 1rem;  ; 
   }
@@ -196,17 +226,20 @@ img{
     margin: 3rem 1rem 3rem;
     width: 100%;
     height: 28rem;
+
     display: flex;
     justify-content: center;
-    gap: 10px;
-    
+    gap: var(--spacing-sm);
+
     position: relative;
+
+    /* Performance optimizations */
 
     z-index: 101;
 }
 
 .img_container_header{
-    color: #1F1500;
+    color: #51beef;
 
     scale: 1;
     width: 60%;
@@ -242,6 +275,11 @@ img{
     object-fit: cover;
     /* border-radius: 10px;
     border: 2px solid rgba(255, 255, 255, 0.548); */
+
+    /* Enable hardware acceleration */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+
     transition: all ease-in-out .5s;
 }
 
@@ -249,7 +287,13 @@ img{
     transition-delay: 200ms;
     width: 25%;
     transform: scale(1.15) translateZ(0);
+    
     cursor: pointer;
+}
+
+.img_container:hover img:not(:hover) {
+    filter: brightness(0.3);
+    transform: scale(0.9);
 }
 
 .img_container img:hover + img,
@@ -285,7 +329,7 @@ img{
     overflow: hidden;
 
 
-
+    visibility: hidden;
     transition: all var(--transition-speed) ease-in-out;
     will-change: opacity, max-height;
     z-index: 100;
@@ -297,7 +341,7 @@ img{
     opacity: 1;
     padding: 2rem;
     margin-top: 1rem;
-
+    visibility: visible;
     max-height: 100%;
 }
 
@@ -323,6 +367,7 @@ img{
     max-width:2cqh;
 
     font-family: Georgia, 'Times New Roman', Times, serif ;
+
 }
 
 .content_container .text_container .description {
@@ -334,15 +379,22 @@ img{
     font-size: 1.2rem;
     font-weight: 500;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    line-height: 1.6;
+
 }
 
 /* ------------------------------------------ Content Container => Image Container ------------------------------------------ */ 
 
 .content_container .image_container{
     display: grid; 
-    grid-template-columns: repeat(2, 1fr);
+    /* minmax(min(  the maximul value (100% of the image), the minimum value (when shrunken down, this will be the smalles the colums will get. */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));   
     gap: 5rem;
     margin-bottom: 2rem;
+
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
 
     will-change: transform;
 }
@@ -391,6 +443,7 @@ img{
     cursor: pointer;
 
     opacity: 0;
+    animation: rotateAnimation 5s linear infinite;
     transition: all var(--transition-speed) ease-in-out;
     z-index: 111;
 }
@@ -409,6 +462,12 @@ img{
 .scrollToTopBtn::after {
     content: "↑";
     font-size: 24px;
+}
+
+@keyframes rotateAnimation {
+	0% {transform: rotateY(0deg) rotateZ(0deg);}
+	50% {transform: rotateY(180deg) rotateZ(5deg);}
+	100% {transform: rotateY(360deg) rotateZ(0deg);}
 }
 
 
