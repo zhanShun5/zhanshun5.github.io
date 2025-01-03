@@ -6,13 +6,24 @@ document.querySelectorAll('.img_container img').forEach(imgElement => {
         e.stopPropagation();
         
         for (const CC of allContentContainers){
-            if(CC.title === imgElement.alt ){
+            if(CC.title !== imgElement.alt) {
+                CC.classList.remove('active');
+            } 
+            else if(CC.title === imgElement.alt ){
                 // Check if the container is NOT already active before scrolling
                 if (!CC.classList.contains('active')) {
-                    // Smooth scroll with slight delay for transition
                     setTimeout(() => {
-                        CC.scrollIntoView({ behavior: "smooth"});
-                    }, 100);
+                        // Get element position
+                        const rect = CC.getBoundingClientRect();
+                        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+                        const targetPosition = rect.top + scrollTop - 200; // 100px offset from top
+
+                        // Smooth scroll to element with offset
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }, 400);
                 }
                 CC.classList.toggle('active');
             }
