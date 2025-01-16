@@ -1,0 +1,252 @@
+:root {
+    --color-one: #000A1F;
+    --color-two: #C6C5B9;
+    --color-three: #1F1500;
+    --color-four: #7F5A83;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    background-image: url("image/black-mamba.png");
+    background-color: var(--color-one);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* gap: 2rem; */
+}
+
+/* ################### LINE accros screen */
+hr {  
+    border: none;
+    height: 2px;
+    background-image: radial-gradient(
+        circle,
+        var(--color-two) 5px,
+        transparent 2px
+    );
+    background-size: 20px 6px; /* :distance of dots to each other, size of dots */
+    background-position: center;
+    background-repeat: repeat-x;
+    margin: 0rem 0rem 0rem 0rem;   
+    width: 100%;
+}
+
+
+.container{
+    width: 90%;
+    height: 90%;
+    padding: 2rem;
+    border-radius: 2rem 2rem 2rem 2rem / 1.5rem 1.5rem 1.5rem 1.5rem;
+    /* color: var(--color-three); */
+}
+
+.hero-header{
+    background-color: rgba(255, 255, 255, 0.226);
+    display: flex;
+    flex-direction: column;
+    background-image: url("image/light-sketch.png");
+}
+
+.about-container{
+    background-color: rgba(207, 203, 203, 0.185);
+    background-image: url("image/light-sketch.png");
+
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem 2rem;
+
+    .background-container{
+        background-color: rgba(34, 148, 148, 0.103);
+        width: 80%;
+        font-size: 14px;
+        font-weight: 550;
+    }
+    .contact-container{
+        background-color: rgba(0, 255, 255, 0.288);
+        background-image: url("image/lined-paper-2.png");
+        width: 20%;
+        font-size: 17px;
+        font-weight: 650;
+    }
+}
+
+.side-project-container-title{
+    font-size: 5rem;
+    font-weight: 400;
+}
+
+
+.side-project-container{
+    background-color: rgba(204, 204, 204, 0.295);
+    background-image: url("image/light-sketch.png");
+    padding: 75px;
+
+    display: grid; 
+    grid-template-columns: 1.5fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr; 
+    gap: .5em .5em; 
+    grid-template-areas: 
+      "Box1 Box1 Box2"
+      "Box3 Box3 Box2"
+      "Box5 Box4 Box4"
+      "Box6 Box6 Box6"; 
+    
+    .Box { 
+        /* border: 2px dotted rgba(255, 0, 0, 0.356); */
+        
+        img {
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            max-height: 80%;
+
+            border: 1px dashed darkblue;
+        }
+        p{
+            font-size: 2rem;
+        }
+    }
+    .Box1 { grid-area: Box1; }
+    .Box2 { grid-area: Box2; }
+    .Box3 { grid-area: Box3; }
+    .Box4 { grid-area: Box4; }
+    .Box5 { grid-area: Box5; }
+    .Box6 { grid-area: Box6; }
+}
+
+
+/* ------------------------------------------ Scroll to the top button ------------------------------------------ */ 
+
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    background-color: #ffffff;
+    background-image: url("image/lined-paper.png");
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    visibility: hidden;
+    cursor: pointer;
+
+    opacity: 0;
+    animation: rotateAnimation 5s linear infinite;
+    transition: all var(--transition-speed) ease-in-out;
+    z-index: 5;
+
+}
+
+#scrollToTopBtn:hover {
+    background-color: #333;
+}
+
+#scrollToTopBtn.visible {
+    visibility: visible;
+    opacity: 1;
+
+}
+
+/* Arrow icon inside button */
+#scrollToTopBtn::after {
+    content: "↑";
+    font-size: 28px;
+}
+
+@keyframes rotateAnimation {
+    0% {transform: rotateY(0deg) rotateZ(0deg);}
+    50% {transform: rotateY(180deg) rotateZ(5deg);}
+    100% {transform: rotateY(360deg) rotateZ(0deg);}
+}
+
+footer{
+    color: #9E7682;
+    background-color: #F5F2DB;
+    padding: 1rem;
+    font-size: smaller;
+    margin-top: 4rem;
+    background-image: url("image/lined-paper-2.png");
+}
+
+
+
+/* ------------------------------------------ Image Modal  from W3schools------------------------------------------ */ 
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 10; /* Sit on top */
+    padding-top: 175px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    color: #eeecec;
+}
+  
+  /* Modal Content (Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    height: 60%;
+    width: 60%;
+    max-width: 60vw;
+}
+  
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#modal-caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #eeecec;
+    padding: 10px 0;
+    height: 150px;
+}
+  
+/* Add Animation - Zoom in the Modal */
+.modal-content, #modal-caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+/* Zoom in animation, when appearin/Pooping up */
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+  
+  /* The Close Button */
+.close {
+    position: absolute;
+    top: 25px;
+    right: 55px;
+    color: #f1f1f1;
+    font-size: 80px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+  
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+  
+  /* 100% Image Width on Smaller Screens */
+  @media only screen and (max-width: 700px){
+    .modal-content {
+      width: 100%;
+    }
+}

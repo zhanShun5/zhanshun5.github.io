@@ -1,0 +1,229 @@
+:root {
+    --color-one: #000A1F;
+    --color-two: #C6C5B9;
+    --color-three: #1F1500;
+    --color-four: #7F5A83;
+}
+
+.project-container{
+    background-color:var(--color-one);
+
+    background-image: url("image/black-mamba.png");
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* ------------------------------------------------- Image Container ---------------------------------- */
+    .img-container-header{
+        color: #ecf9ff;
+        font-size: 5.5rem;
+    
+        scale: 1;
+        width: 80%;
+        height: 60%;
+    
+        text-align: center;
+        margin-top: 4.5rem;
+    
+    
+        border-radius: 1.4rem 1.4rem 5rem 5rem / 1rem 1rem 6.25rem 6.25rem; 
+    
+
+        background-color:var(--color-one);
+
+        background-image: url("image/black-mamba.png");
+        /* box-shadow:  1.4rem 1.4rem 3.9rem #260051,
+                    -1.4rem -1.4rem 3.9rem #480099; */
+    
+        transition: all ease-in-out .5s;
+        will-change: "scale";
+    }
+
+    
+    .img-container {
+        margin: 3rem 1rem 3rem;
+        width: 100%;
+        height: 28rem;
+
+        background-color:var(--color-one);
+        background-image: url("image/black-mamba.png");
+
+
+        display: flex;
+        justify-content: center;
+        gap: var(1rem);
+
+        position: relative;
+
+        z-index: 3;
+    }
+
+    .img-container img{
+        border-radius: 8.1rem;
+        background: linear-gradient(145deg, #3b007d, #320069);
+        /* box-shadow:  1.01rem 1.01rem 1.9rem #260051,
+                    -0.01rem -2.01rem 1.9rem #480099; */
+        width: 18%;
+        height: 100%;
+        object-fit: cover;
+        /* border-radius: 10px;
+        border: 2px solid rgba(255, 255, 255, 0.548); */
+    
+        /* Enable hardware acceleration */
+        transform: translateZ(0);
+        backface-visibility: hidden;
+    
+        transition: all ease-in-out .5s;
+        will-change: filter, transform;
+    }
+    
+    .img-container img:hover{
+        transition-delay: 200ms;
+        width: 25%;
+        transform: scale(1.15);
+        
+        cursor: pointer;
+        z-index: 2;
+    }
+    
+    .img-container:hover img:not(:hover) {
+        filter: brightness(0.3);
+        transform: scale(0.9);
+    }
+    
+    .img-container img:hover + img,
+    .img-container img:hover ~ img,
+    .img-container img:has(+ *:hover),
+    .img-container img:has(+ * + *:hover),
+    .img-container img:has(+ * + * + *:hover),
+    .img-container img:has(+ * + * + * + *:hover) {
+        filter: brightness(0.3s) saturate(0), contrast(1.2) blur(50px);
+        transform: scale(.9);
+    }
+
+    /* ------------------------------------------------- Content Container ---------------------------------- */
+    .content-container{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        background-image: url("image/black-mamba.png");
+
+        width: clamp(800px, 100%, 1600px);
+        height: clamp(800px, 100%, 1600px);
+
+   
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        visibility: hidden;
+
+
+        transition: all var(--transition-speed) ease-in-out;
+        will-change: opacity, max-height;
+        z-index: 2;
+    }
+
+    .content-container.active {
+        opacity: 1;
+        padding: 2rem;
+        margin-top: 1rem;
+        visibility: visible;
+        max-height: 100%;
+    }
+
+    /* ------------------------------------------------- Content Text Container ---------------------------------- */
+    .content-container .text-container{
+        display: flex;
+        gap: 1rem;
+        margin-left: 3%;
+        margin-right: 3%;
+
+        font-family: Georgia, 'Times New Roman', Times, serif ;
+    
+        .title {
+            flex: 1;
+            margin-top: 2rem;
+           
+            margin-left: 4rem;
+            font-weight: 600;
+            font-size: 4rem;
+        }
+        
+        .description {
+            
+            flex:  2;
+            
+            font-size: 1.5rem;
+            font-weight: 500;
+        
+            line-height: 1.5;
+        }
+    }
+
+    /* ------------------------------------------------- Content Image Container ---------------------------------- */
+    
+
+    .content-container .image-container{
+        display: grid; 
+        /* minmax(min(  the maximul value (100% of the image), the minimum value (when shrunken down, this will be the smalles the colums will get. */
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));   
+        gap: 0.5rem;
+        margin: 2rem;
+        
+        will-change: transform;
+    
+    
+        video,
+        img{
+            aspect-ratio: 1;
+            background: #333;
+            border-radius: 12px;
+            overflow: hidden;
+            object-fit: cover;
+
+
+            width: 100%;
+            height: 100%;
+
+            cursor: pointer;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+        
+            transition: all ease-in-out .5s;
+        }
+
+        .image-container-img{
+            margin: 0;
+        }
+        
+        .image-figure-item:hover figcaption {
+            opacity: 0.8;
+        }
+        
+        video:hover{
+            transform: scale(1.45);
+            z-index: 113;
+        }
+        
+        .image-figure-item:hover {
+            transform: scale(1.0075);
+            opacity: 0.7;
+        }
+        
+        .image-figure-item figcaption {
+            margin-top: 8px;
+            transition: opacity 0.3s ease;
+        }
+        
+        .image-figure-item{  /* the images */
+            opacity: 1;
+            transform-style: preserve-3d;
+            transition: transform 0.3s ease;
+
+        }
+    }
+}
+
+
