@@ -93,26 +93,49 @@ hr {
       "Box1 Box1 Box2"
       "Box3 Box3 Box2"
       "Box5 Box4 Box4"
-      "Box6 Box6 Box6"; 
+      "Box6 Box6 Box6"
+      "Box7 Box7 Box7"
+      "Box8 Box8 Box8"
+      "Box9 Box9 Box9"
+      "Box10 Box11 Box11"
+      "Box12 Box12 Box12"; 
     
+
+
     .Box { 
         /* border: 2px dotted rgba(255, 0, 0, 0.356); */
-        
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 10px;
+        padding: 15px;
         iframe{
             width: 100%;
             height: 460px;
+
+            display: block;
+            margin: 0 auto;
+
+            border: 1px dashed lightblue;
         }
 
         img {
             width: 100%;
-            height: 100%;
             max-width: 100%;
             max-height: 100%;
 
+            display: block; 
+            margin: 0 auto; 
+            
             border: 1px dashed darkblue;
+            
         }
         p{
             font-size: 2rem;
+            margin-bottom: 20px;
         }
     }
     .Box1 { grid-area: Box1; }
@@ -121,6 +144,15 @@ hr {
     .Box4 { grid-area: Box4; }
     .Box5 { grid-area: Box5; }
     .Box6 { grid-area: Box6; }
+    .Box7 { grid-area: Box7; }
+    .Box8 { grid-area: Box8; }
+    .Box9 { grid-area: Box9; }
+    .Box10 { grid-area: Box10; }
+    .Box11 { grid-area: Box11; }
+    .Box12 { 
+        grid-area: Box12; 
+        width: 1200px;
+        padding: 20px;}
 }
 
 
