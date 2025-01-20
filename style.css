@@ -6,11 +6,26 @@
 }
 
 
+@font-face {
+    font-family: 'Archivo-Narrow';
+    src: url('font/Archivo_Narrow/ArchivoNarrow-VariableFont_wght.ttf') format('woff2');
+}
+@font-face {
+    font-family: 'Tenor-Sans';
+    src: url('font/Tenor_Sans/TenorSans-Regular.ttf') format('woff2');
+}
+
+
 html {
     scroll-behavior: smooth;
 }
 
+/* *{
+    border: 2px solid red;
+} */
+
 body{
+
     background-image: url("image/black-mamba.png");
     background-color: var(--color-one);
     display: flex;
@@ -35,6 +50,14 @@ hr {
     width: 100%;
 }
 
+h1,
+header{
+    font-family: Tenor-Sans;
+}
+
+p{
+    font-family: Archivo-Narrow;
+}
 
 .container{
     width: 90%;
@@ -47,7 +70,8 @@ hr {
 .hero-header{
     background-color: rgba(255, 255, 255, 0.226);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 2rem;
     background-image: url("image/light-sketch.png");
 }
 
@@ -81,24 +105,32 @@ hr {
 
 
 .side-project-container{
-    background-color: rgba(204, 204, 204, 0.295);
+    background-color: #00061400;
     background-image: url("image/light-sketch.png");
-    padding: 75px;
 
     display: grid; 
-    grid-template-columns: 1.5fr 1fr 1fr; 
-    grid-template-rows: 1fr 1fr 1fr; 
-    gap: .5em .5em; 
+    grid-template-columns: 1.5fr 1fr 1fr .6fr; 
+    grid-template-rows: repeat(9, .6fr); 
+    grid-gap: .5em .5em; 
+    padding: 75px;
+    
+    border-left: 4.5px dotted whitesmoke;
+    border-right: 4.5px dotted whitesmoke;
+    -moz-border-radius-topright: 30px 20px;
+    -moz-border-radius-topleft: 30px 20px;
+
     grid-template-areas: 
-      "Box1 Box1 Box2"
-      "Box3 Box3 Box2"
-      "Box5 Box4 Box4"
-      "Box6 Box6 Box6"
-      "Box7 Box7 Box7"
-      "Box8 Box8 Box8"
-      "Box9 Box9 Box9"
-      "Box10 Box11 Box11"
-      "Box12 Box12 Box12"; 
+      "Box1 Box1 Box2 Box2"
+      "Box3 Box3 Box2 Box2"
+      "Box5 Box4 Box4 Box4"
+      "Box6 Box6 Box6 Box6"
+      "Box7 Box7 Box8 Box8"
+      "Box9 Box9 Box9 Box9"
+      "Box10 Box11 Box11 Box11"     
+      "Box12 Box12 Box12 Box12"
+      "Box13 Box13 Box14 Box14"
+      "Box15 Box16 Box16 Box16"
+      "Box17 Box18 Box19 Box19";
     
 
 
@@ -130,7 +162,7 @@ hr {
             display: block; 
             margin: 0 auto; 
             
-            border: 1px dashed darkblue;
+            border: 1px dashed rgb(83, 141, 160);
             
         }
         p{
@@ -149,10 +181,14 @@ hr {
     .Box9 { grid-area: Box9; }
     .Box10 { grid-area: Box10; }
     .Box11 { grid-area: Box11; }
-    .Box12 { 
-        grid-area: Box12; 
-        width: 1200px;
-        padding: 20px;}
+    .Box12 { grid-area: Box12; }
+    .Box13 { grid-area: Box13; }
+    .Box14 { grid-area: Box14; }
+    .Box15 { grid-area: Box15; }
+    .Box16 { grid-area: Box16; }
+    .Box17 { grid-area: Box17; }
+    .Box18 { grid-area: Box18; }
+    .Box19 { grid-area: Box19; }
 }
 
 
@@ -225,8 +261,8 @@ footer{
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: hidden; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    background-color: rgba(0, 0, 0, 0.534); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.452); /* Black w/ opacity */
     color: #eeecec;
 }
   

@@ -48,11 +48,10 @@
 
         background-color:var(--color-one);
         background-image: url("image/black-mamba.png");
-
-
+        
         display: flex;
         justify-content: center;
-        gap: var(1rem);
+        gap: 2.25rem;
 
         position: relative;
 
@@ -67,8 +66,10 @@
         width: 18%;
         height: 100%;
         object-fit: cover;
-        /* border-radius: 10px;
-        border: 2px solid rgba(255, 255, 255, 0.548); */
+
+        border: 4.5px dotted whitesmoke;
+        -moz-border-radius-topright: 30px 20px;
+        -moz-border-radius-topleft: 30px 20px;  
     
         /* Enable hardware acceleration */
         transform: translateZ(0);
