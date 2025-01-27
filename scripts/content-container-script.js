@@ -27,9 +27,10 @@ const toggleContentContainer = (clickedImageAlt) => {
             if (wasInactive) {
                 setTimeout(() => scrollToElement(container), SCROLL_DELAY);
             }
-        } else {
-            container.classList.remove('active');
-        }
+        } 
+        // else {
+        //     container.classList.remove('active');
+        // }
     });
 };
 

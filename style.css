@@ -37,17 +37,17 @@ body{
 /* ################### LINE accros screen */
 hr {  
     border: none;
-    height: 2px;
+    height: 1.5px;
     background-image: radial-gradient(
         circle,
         var(--color-two) 5px,
         transparent 2px
     );
-    background-size: 20px 6px; /* :distance of dots to each other, size of dots */
+    background-size: 1px 6px; /* :distance of dots to each other, size of dots */
     background-position: center;
     background-repeat: repeat-x;
     margin: 0rem 0rem 0rem 0rem;   
-    width: 100%;
+    width: 5%;
 }
 
 h1,
@@ -252,18 +252,19 @@ footer{
 
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 10; /* Sit on top */
+    display: none; 
+    position: fixed; 
+    z-index: 10;
     padding-top: 175px; /* Location of the box */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: hidden; /* Enable scroll if needed */
-    background-color: rgba(0, 0, 0, 0.534); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.452); /* Black w/ opacity */
+    width: 100%; 
+    height: 100%; 
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 0.85);
     color: #eeecec;
+
 }
   
   /* Modal Content (Image) */
@@ -301,9 +302,13 @@ footer{
   
   /* The Close Button */
 .close {
+    border: 2px solid rgba(48, 45, 45, 0.39);
+    width: 1800px;
+    height: 900px;
+    
     position: absolute;
-    top: 25px;
-    right: 55px;
+    top: 0px;
+    right: 35px;
     color: #f1f1f1;
     font-size: 80px;
     font-weight: bold;

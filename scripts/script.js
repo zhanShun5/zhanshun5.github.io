@@ -1,3 +1,4 @@
+// -----------------------------------  Handle Image Modal --------------------------
 // Get the modal
 const modal = document.getElementById("myModal");
 const modalImg = document.getElementById("img01");
@@ -10,22 +11,36 @@ imgas.forEach(function(img) {
         modal.style.display = "block";
         modalImg.src = this.src;
         captionText.innerHTML = this.alt;
+        disableScroll()
       })
 });
 
 
 // Get the <span> element that closes the modal
 const span = document.getElementsByClassName("close")[0];
-
 // When the user clicks on <span> (x), close the modal
 span.addEventListener('click', () => {
     modal.style.display = "none";
+    enableScroll();
 });
 
 document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') modal.style.display = "none";
+    if (e.key === 'Escape') 
+        modal.style.display = "none";
+        enableScroll();
 });
 
+
+    // ----------------------------------- Handle Disable Scroll 
+function disableScroll() {
+    document.body.style.overflow = "hidden";
+    document.body.style.userSelect = "none";
+}
+
+function enableScroll() {
+    document.body.style.overflow = "auto";
+    document.body.style.userSelect = "auto";
+}   
 
 
 // -----------------------------------  Scroll to the top button --------------------------
