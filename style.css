@@ -1,10 +1,9 @@
 :root {
-    --color-one: #000A1F;
-    --color-two: #C6C5B9;
-    --color-three: #1F1500;
-    --color-four: #7F5A83;
+    --color-one: #33595E;
+    --color-two: #373B41;
+    --color-three: #DDD7C5;
+    --color-four: #FBF1DC;
 }
-
 
 @font-face {
     font-family: 'Archivo-Narrow';
@@ -34,7 +33,7 @@ body{
     /* gap: 2rem; */
 }
 
-/* ################### LINE accros screen */
+/* ################### LINE accros screen 
 hr {  
     border: none;
     height: 1.5px;
@@ -43,12 +42,12 @@ hr {
         var(--color-two) 5px,
         transparent 2px
     );
-    background-size: 1px 6px; /* :distance of dots to each other, size of dots */
+    background-size: 1px 6px;  :distance of dots to each other, size of dots 
     background-position: center;
     background-repeat: repeat-x;
     margin: 0rem 0rem 0rem 0rem;   
     width: 5%;
-}
+}*/
 
 h1,
 header{
@@ -67,36 +66,7 @@ p{
     /* color: var(--color-three); */
 }
 
-.hero-header{
-    background-color: rgba(255, 255, 255, 0.226);
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    background-image: url("image/light-sketch.png");
-}
 
-.about-container{
-    background-color: rgba(207, 203, 203, 0.185);
-    background-image: url("image/light-sketch.png");
-
-    display: flex;
-    flex-direction: row;
-    gap: 2.5rem 2rem;
-
-    .background-container{
-        background-color: rgba(34, 148, 148, 0.103);
-        width: 80%;
-        font-size: 14px;
-        font-weight: 550;
-    }
-    .contact-container{
-        background-color: rgba(0, 255, 255, 0.288);
-        background-image: url("image/lined-paper-2.png");
-        width: 20%;
-        font-size: 17px;
-        font-weight: 650;
-    }
-}
 
 .side-project-container-title{
     font-size: 5rem;
@@ -112,7 +82,7 @@ p{
     grid-template-columns: 1.5fr 1fr 1fr .6fr; 
     grid-template-rows: repeat(9, .6fr); 
     grid-gap: .5em .5em; 
-    padding: 75px;
+    padding: 90px;
     
     border-left: 4.5px dotted whitesmoke;
     border-right: 4.5px dotted whitesmoke;
@@ -143,9 +113,12 @@ p{
         justify-content: center;
 
         gap: 10px;
-        padding: 15px;
+        padding: 25px;
+
+        width: 85%;
+
         iframe{
-            width: 100%;
+            width: 90%;
             height: 460px;
 
             display: block;
@@ -156,7 +129,7 @@ p{
 
         img {
             width: 100%;
-            max-width: 100%;
+            max-width: 90%;
             max-height: 100%;
 
             display: block; 
@@ -166,7 +139,7 @@ p{
             
         }
         p{
-            font-size: 2rem;
+            font-size: 180%;
             margin-bottom: 20px;
         }
     }
@@ -181,7 +154,10 @@ p{
     .Box9 { grid-area: Box9; }
     .Box10 { grid-area: Box10; }
     .Box11 { grid-area: Box11; }
-    .Box12 { grid-area: Box12; }
+    .Box12 { 
+        grid-area: Box12;
+        width: 80%;
+    }
     .Box13 { grid-area: Box13; }
     .Box14 { grid-area: Box14; }
     .Box15 { grid-area: Box15; }

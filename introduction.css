@@ -1,0 +1,54 @@
+
+
+.navigator{
+    background-color: rgba(255, 255, 255, 0.226);
+    background-image: url("image/light-sketch.png");
+
+    font-size: 1.5rem;
+    width: 8rem;
+
+
+    nav{
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        a{
+            /* border: 2px solid red; */
+            width: 10rem;
+        }
+    }
+
+}
+
+.about-container{
+    background-color: rgba(207, 203, 203, 0.185);
+    background-image: url("image/light-sketch.png");
+
+    display: flex;
+    flex-flow: row nowrap;
+    height: 50vh;
+    gap: 2.5rem 2rem;
+
+    padding: 2rem;
+
+    margin-bottom: 25rem;
+    margin-top: 5rem;
+
+    .background-container{
+        background-color: rgba(22, 44, 44, 0.103);
+        width: 80%;
+        font-size: 14px;
+        font-weight: 550;
+    }
+    .contact-container{
+        background-color: var(--color-two);
+        background-image: url("image/lined-paper-2.png");
+        width: 20%;
+        font-size: 17px;
+        font-weight: 650;
+    }
+}
