@@ -1,6 +1,6 @@
 // Constants
 const SCROLL_OFFSET = 200;
-const SCROLL_DELAY = 300;
+const SCROLL_DELAY = 150;
 
 // Cache DOM elements
 const allContentContainers = document.querySelectorAll('.content-container');

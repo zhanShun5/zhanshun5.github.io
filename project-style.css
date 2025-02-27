@@ -1,14 +1,7 @@
-:root {
-    --color-one: #000A1F;
-    --color-two: #C6C5B9;
-    --color-three: #1F1500;
-    --color-four: #7F5A83;
-}
 
 .project-container{
-    background-color:var(--color-one);
-
-    background-image: url("image/black-mamba.png");
+    /* background-color:var(--color-one);
+    background-image: url("image/black-mamba.png"); */
 
     display: flex;
     flex-direction: column;
@@ -46,8 +39,8 @@
         width: 100%;
         height: 100%;
 
-        background-color:var(--color-one);
-        background-image: url("image/black-mamba.png");
+        /* background-color:var(--color-one);
+        background-image: url("image/black-mamba.png"); */
         
         display: flex;
         flex-direction: column;
@@ -132,7 +125,7 @@
             
                 margin-left: 4rem;
                 font-weight: 600;
-                font-size: 4rem;
+                font-size: 5rem;
             }
             
             .description {

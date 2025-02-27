@@ -1,8 +1,8 @@
 :root {
-    --color-one: #33595E;
-    --color-two: #373B41;
-    --color-three: #DDD7C5;
-    --color-four: #FBF1DC;
+    --color-one: #000A1F;
+    --color-two: #C6C5B9;
+    --color-three: #003c58;
+    --color-four: #02628f;
 }
 
 @font-face {
@@ -13,10 +13,19 @@
     font-family: 'Tenor-Sans';
     src: url('font/Tenor_Sans/TenorSans-Regular.ttf') format('woff2');
 }
+@font-face {
+    font-family: 'ddaftt';
+    src: url('font/ddaftt/dDAFTt-U.ttf') format('woff2');
+}
+@font-face {
+    font-family: 'brown-sugar';
+    src: url('font/brown_sugar/Brown-Sugar.ttf') format('woff2');
+}
 
 
 html {
     scroll-behavior: smooth;
+    height: 100%;
 }
 
 /* *{
@@ -24,16 +33,20 @@ html {
 } */
 
 body{
-
-    background-image: url("image/black-mamba.png");
-    background-color: var(--color-one);
+    background-image: 
+        url("image/black-mamba.png"), 
+        linear-gradient(to top, var(--color-one) 35%, var(--color-three) 90%, var(--color-four) 100%);
+    background-attachment: fixed;
+    min-height: 100%;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
     /* gap: 2rem; */
+
 }
 
-/* ################### LINE accros screen 
+/* ################### LINE accros screen  */
 hr {  
     border: none;
     height: 1.5px;
@@ -42,16 +55,21 @@ hr {
         var(--color-two) 5px,
         transparent 2px
     );
-    background-size: 1px 6px;  :distance of dots to each other, size of dots 
+    /* :distance of dots to each other, size of dots  */
+    background-size: 1rem 0rem; 
     background-position: center;
     background-repeat: repeat-x;
-    margin: 0rem 0rem 0rem 0rem;   
+    margin: 0rem 0rem 5rem 0rem;   
     width: 5%;
-}*/
+}
 
 h1,
+h2,
+h3,
 header{
     font-family: Tenor-Sans;
+    font-style: bold;
+    -webkit-text-stroke: 2px rgb(0, 0, 0);
 }
 
 p{
@@ -95,7 +113,7 @@ p{
       "Box5 Box4 Box4 Box4"
       "Box6 Box6 Box6 Box6"
       "Box7 Box7 Box8 Box8"
-      "Box9 Box9 Box9 Box9"
+      "Box9 Box20 Box20 Box21"
       "Box10 Box11 Box11 Box11"     
       "Box12 Box12 Box12 Box12"
       "Box13 Box13 Box14 Box14"
@@ -115,7 +133,7 @@ p{
         gap: 10px;
         padding: 25px;
 
-        width: 85%;
+        min-width: 85%;
 
         iframe{
             width: 90%;
@@ -128,7 +146,7 @@ p{
         }
 
         img {
-            width: 100%;
+            min-width: 80%;
             max-width: 90%;
             max-height: 100%;
 
@@ -151,7 +169,12 @@ p{
     .Box6 { grid-area: Box6; }
     .Box7 { grid-area: Box7; }
     .Box8 { grid-area: Box8; }
-    .Box9 { grid-area: Box9; }
+    .Box9 { grid-area: Box9;}
+    .Box20 { grid-area: Box20;}
+    .Box21 { 
+        grid-area: Box21;
+        min-width: 20rem;
+    }
     .Box10 { grid-area: Box10; }
     .Box11 { grid-area: Box11; }
     .Box12 { 
