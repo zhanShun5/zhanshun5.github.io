@@ -5,6 +5,10 @@
     --color-four: #02628f;
 }
 
+/* *{
+    border: 2px solid red;
+} */
+
 @font-face {
     font-family: 'Archivo-Narrow';
     src: url('font/Archivo_Narrow/ArchivoNarrow-VariableFont_wght.ttf') format('woff2');
@@ -21,16 +25,18 @@
     font-family: 'brown-sugar';
     src: url('font/brown_sugar/Brown-Sugar.ttf') format('woff2');
 }
+@font-face {
+    font-family: 'seveneleven';
+    src: url('font/7ELEVEN.ttf') format('woff2');
+}
 
 
 html {
     scroll-behavior: smooth;
-    height: 100%;
+
 }
 
-/* *{
-    border: 2px solid red;
-} */
+
 
 body{
     background-image: 
@@ -48,19 +54,9 @@ body{
 
 /* ################### LINE accros screen  */
 hr {  
-    border: none;
-    height: 1.5px;
-    background-image: radial-gradient(
-        circle,
-        var(--color-two) 5px,
-        transparent 2px
-    );
-    /* :distance of dots to each other, size of dots  */
-    background-size: 1rem 0rem; 
-    background-position: center;
-    background-repeat: repeat-x;
+    border: 3px solid white;
     margin: 0rem 0rem 5rem 0rem;   
-    width: 5%;
+    width: 100%;
 }
 
 h1,
@@ -69,7 +65,6 @@ h3,
 header{
     font-family: Tenor-Sans;
     font-style: bold;
-    -webkit-text-stroke: 2px rgb(0, 0, 0);
 }
 
 p{
@@ -81,7 +76,6 @@ p{
     height: 90%;
     padding: 2rem;
     border-radius: 2rem 2rem 2rem 2rem / 1.5rem 1.5rem 1.5rem 1.5rem;
-    /* color: var(--color-three); */
 }
 
 
@@ -93,15 +87,25 @@ p{
 
 
 .side-project-container{
+    margin: auto;
+    width: 75%;
+
     background-color: #00061400;
     background-image: url("image/light-sketch.png");
+    
 
     display: grid; 
-    grid-template-columns: 1.5fr 1fr 1fr .6fr; 
-    grid-template-rows: repeat(9, .6fr); 
+    /* defines the width of each column */
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    /*  defines the height of each row */
+    grid-template-rows: repeat(10, .8fr);   
     grid-gap: .5em .5em; 
-    padding: 90px;
     
+    min-width: 0;
+    overflow: hidden;
+    
+
+    /* Decorative borders */
     border-left: 4.5px dotted whitesmoke;
     border-right: 4.5px dotted whitesmoke;
     -moz-border-radius-topright: 30px 20px;
@@ -110,11 +114,11 @@ p{
     grid-template-areas: 
       "Box1 Box1 Box2 Box2"
       "Box3 Box3 Box2 Box2"
-      "Box5 Box4 Box4 Box4"
+      "Box5 Box5 Box4 Box4"
       "Box6 Box6 Box6 Box6"
       "Box7 Box7 Box8 Box8"
-      "Box9 Box20 Box20 Box21"
-      "Box10 Box11 Box11 Box11"     
+      "Box9 Box9 Box20 Box21"
+      "Box10 Box10 Box11 Box11"     
       "Box12 Box12 Box12 Box12"
       "Box13 Box13 Box14 Box14"
       "Box15 Box16 Box16 Box16"
@@ -132,8 +136,6 @@ p{
 
         gap: 10px;
         padding: 25px;
-
-        min-width: 85%;
 
         iframe{
             width: 90%;
@@ -159,6 +161,8 @@ p{
         p{
             font-size: 180%;
             margin-bottom: 20px;
+            font-weight: 900;
+            text-align: center;
         }
     }
     .Box1 { grid-area: Box1; }
@@ -173,7 +177,6 @@ p{
     .Box20 { grid-area: Box20;}
     .Box21 { 
         grid-area: Box21;
-        min-width: 20rem;
     }
     .Box10 { grid-area: Box10; }
     .Box11 { grid-area: Box11; }
@@ -221,7 +224,6 @@ p{
 #scrollToTopBtn.visible {
     visibility: visible;
     opacity: 1;
-
 }
 
 /* Arrow icon inside button */
@@ -321,9 +323,250 @@ footer{
     cursor: pointer;
 }
   
+
+
   /* 100% Image Width on Smaller Screens */
-  @media only screen and (max-width: 700px){
+@media only screen and (max-width: 700px){
     .modal-content {
       width: 100%;
+    }
+}
+
+
+/* Media queries for responsive design */
+@media screen and (max-width: 1200px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .side-project-container-title {
+        font-size: 4rem;
+    }
+    
+    .side-project-container {
+        padding: 60px;
+        grid-gap: 0.4em 0.4em;
+        grid-template-rows: repeat(11, .6fr);  
+    }
+}
+
+@media screen and (max-width: 992px) {
+    html {
+        font-size: 13px;
+    }
+    
+    .container {
+        width: 95%;
+        padding: 1.5rem;
+    }
+    
+    .side-project-container-title {
+        font-size: 3.5rem;
+    }
+    
+    .side-project-container {
+
+        margin: auto;
+        width: 75%;
+
+        padding: 40px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(14, .25fr);   
+        grid-template-areas: 
+            "Box1 Box1"
+            "Box2 Box2"
+            "Box3 Box3"
+            "Box4 Box4"
+            "Box5 Box5"
+            "Box6 Box6"
+            "Box7 Box8"
+            "Box9 Box20"
+            "Box21 Box21"
+            "Box10 Box11"
+            "Box12 Box12"
+            "Box13 Box14"
+            "Box15 Box16"
+            "Box17 Box19"
+            "Box18 Box19";
+            
+        .Box {
+            padding: 20px;
+            
+            iframe {
+                height: 360px;
+            }
+            
+            p {
+                font-size: 190%;
+            }
+        }
+    }
+    
+    #scrollToTopBtn {
+        bottom: 30px;
+        right: 30px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    #scrollToTopBtn::after {
+        font-size: 22px;
+    }
+    
+    .modal-content {
+        height: 70%;
+        width: 70%;
+        max-width: 70vw;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 20px;
+    }
+    
+    h1, h2, h3, header {
+        -webkit-text-stroke: 1px rgb(0, 0, 0);
+    }
+    
+    .side-project-container-title {
+        font-size: 3rem;
+    }
+    
+    .side-project-container {
+        padding: 30px;
+        grid-gap: 0.3em 0.3em;
+        grid-template-rows: repeat(14, .25fr);   
+        border-left: 3px dotted whitesmoke;
+        border-right: 3px dotted whitesmoke;
+        
+        .Box {
+
+            padding: 15px;
+            min-width: 90%;
+            
+            iframe {
+                height: 300px;
+                width: 95%;
+            }
+            
+            img {
+                min-width: 85%;
+                max-width: 95%;
+            }
+            
+            p {
+                font-size: 120%;
+            }
+        }
+    }
+    
+    .close {
+        width: auto;
+        height: auto;
+        top: 15px;
+        right: 25px;
+        font-size: 60px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 12px;
+    }
+    
+    .container {
+        width: 98%;
+        padding: 1rem;
+        border-radius: 1rem 1rem 1rem 1rem / 1rem 1rem 1rem 1rem;
+    }
+    
+    .side-project-container-title {
+        font-size: 2.5rem;
+    }
+    
+    .side-project-container {
+        margin: auto;
+        width: 75%;
+    
+        padding: 20px;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(20, .5fr);   
+        grid-template-areas: 
+            "Box1"
+            "Box2"
+            "Box3"
+            "Box4"
+            "Box5"
+            "Box6"
+            "Box7"
+            "Box8"
+            "Box9"
+            "Box20"
+            "Box21"
+            "Box10"
+            "Box11"
+            "Box12"
+            "Box13"
+            "Box14"
+            "Box15"
+            "Box16"
+            "Box17"
+            "Box18"
+            "Box19";
+            
+        .Box {
+            padding: 10px;
+            min-width: 95%;
+            
+            iframe {
+                height: 250px;
+                width: 100%;
+            }
+            
+            img {
+                min-width: 90%;
+                max-width: 100%;
+            }
+            
+            p {
+                font-size: 160%;
+                margin-bottom: 10px;
+            }
+        }
+        
+ 
+    }
+    
+    #scrollToTopBtn {
+        bottom: 20px;
+        right: 20px;
+        width: 35px;
+        height: 35px;
+    }
+    
+    #scrollToTopBtn::after {
+        font-size: 18px;
+    }
+    
+    .modal {
+        padding-top: 100px;
+    }
+    
+    .modal-content {
+        height: 80%;
+        width: 80%;
+        max-width: 80vw;
+    }
+    
+    #modal-caption {
+        width: 90%;
+        height: 100px;
+    }
+    
+    .close {
+        top: 10px;
+        right: 15px;
+        font-size: 40px;
     }
 }
