@@ -98,7 +98,7 @@ p{
     /* defines the width of each column */
     grid-template-columns: 1fr 1fr 1fr 1fr; 
     /*  defines the height of each row */
-    grid-template-rows: repeat(10, .8fr);   
+    grid-template-rows: repeat(12, .8fr);   
     grid-gap: .5em .5em; 
     
     min-width: 0;
@@ -112,17 +112,20 @@ p{
     -moz-border-radius-topleft: 30px 20px;
 
     grid-template-areas: 
-      "Box1 Box1 Box2 Box2"
-      "Box3 Box3 Box2 Box2"
-      "Box5 Box5 Box4 Box4"
-      "Box6 Box6 Box6 Box6"
-      "Box7 Box7 Box8 Box8"
-      "Box9 Box9 Box20 Box21"
-      "Box10 Box10 Box11 Box11"     
-      "Box12 Box12 Box12 Box12"
-      "Box13 Box13 Box14 Box14"
-      "Box15 Box16 Box16 Box16"
-      "Box17 Box18 Box19 Box19";
+        "Box17 Box17 Box18 Box18"
+        "Box19 Box19 Box19 Box19"
+        "Box1 Box1 Box2 Box2"
+        "Box3 Box3 Box2 Box2"
+        "Box6 Box6 Box6 Box6"
+        "Box5 Box5 Box4 Box4"
+        "Box7 Box7 Box8 Box8"
+        "Box9 Box9 Box21 Box21"
+        "Box20 Box20 Box21 Box21"
+        "Box10 Box10 Box11 Box11"     
+        "Box12 Box12 Box12 Box12"
+        "Box13 Box13 Box14 Box14"
+        "Box15 Box16 Box16 Box16"
+      ;
     
 
 
@@ -139,7 +142,7 @@ p{
 
         iframe{
             width: 90%;
-            height: 460px;
+            height: 480px;
 
             display: block;
             margin: 0 auto;
@@ -190,7 +193,9 @@ p{
     .Box16 { grid-area: Box16; }
     .Box17 { grid-area: Box17; }
     .Box18 { grid-area: Box18; }
-    .Box19 { grid-area: Box19; }
+    .Box19 {
+         grid-area: Box19;
+        iframe{height: 560px;}}
 }
 
 
@@ -371,23 +376,24 @@ footer{
 
         padding: 40px;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: repeat(14, .25fr);   
+        grid-template-rows: repeat(15, .25fr);   
         grid-template-areas: 
+            "Box17 Box17"
+            "Box18 Box18"
+            "Box19 Box19"
             "Box1 Box1"
             "Box2 Box2"
             "Box3 Box3"
+            "Box6 Box6"
             "Box4 Box4"
             "Box5 Box5"
-            "Box6 Box6"
             "Box7 Box8"
             "Box9 Box20"
             "Box21 Box21"
             "Box10 Box11"
             "Box12 Box12"
             "Box13 Box14"
-            "Box15 Box16"
-            "Box17 Box19"
-            "Box18 Box19";
+            "Box15 Box16";
             
         .Box {
             padding: 20px;
@@ -493,12 +499,15 @@ footer{
         grid-template-columns: 1fr;
         grid-template-rows: repeat(20, .5fr);   
         grid-template-areas: 
+            "Box17"
+            "Box18"
+            "Box19"
             "Box1"
             "Box2"
             "Box3"
+            "Box6"
             "Box4"
             "Box5"
-            "Box6"
             "Box7"
             "Box8"
             "Box9"
@@ -510,10 +519,7 @@ footer{
             "Box13"
             "Box14"
             "Box15"
-            "Box16"
-            "Box17"
-            "Box18"
-            "Box19";
+            "Box16";
             
         .Box {
             padding: 10px;

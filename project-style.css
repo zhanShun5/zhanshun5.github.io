@@ -187,6 +187,7 @@
                 opacity: 1;
                 transform-style: preserve-3d;
                 transition: transform 0.3s ease;
+                gap: 2rem;
             }
         }
     }
@@ -246,7 +247,7 @@
     .WYM-container{
         background-image: url('image/wallpaper.png'); 
         color: #000000 ;
-
+        
         iframe,
         img{
             border: 4.5px dashed rgb(255, 255, 255);
@@ -261,6 +262,10 @@
         header{
             font-family: brown-sugar;
             -webkit-text-stroke: 2px rgb(0, 0, 0);  
+        }
+
+        .description{
+            -webkit-text-stroke: .4px rgba(210, 214, 236, 0.788);  
         }
     }
 
@@ -309,7 +314,7 @@
         iframe,
         img{
             border: 4.5px solid red;
-            outline: 5px solid white;
+            outline: 2px solid white;
             -moz-border-radius-topright: 10px 20px;
             -moz-border-radius-topleft: 10px 20px;  
 
@@ -321,7 +326,7 @@
 
         header{
             font-family: seveneleven;
-            -webkit-text-stroke: 2px rgba(102, 0, 0, 0.555);  
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.671);  
             color: #D88853;
             font-weight: 100;
         }
@@ -461,6 +466,7 @@
             padding: 1.5rem;
             
             .image-container {
+                gap: 2.5rem;
                 grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
             }
             
@@ -515,6 +521,7 @@
             .image-container {
                 grid-template-columns: 1fr;
                 margin: 1rem;
+                gap: 3.5rem;
             }
             
             .title {

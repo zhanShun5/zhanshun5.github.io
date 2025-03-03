@@ -74,3 +74,17 @@ window.addEventListener('scroll', handleScroll, { passive: true });
 
 // Add click event listener using the new scroll function
 scrollToTopBtn.addEventListener("click", scrollToTop);
+
+
+
+
+// On click fullscreen
+document.querySelectorAll('CCVideo').addEventListener('click', function() {
+    if (this.requestFullscreen) {
+      this.requestFullscreen();
+    } else if (this.webkitRequestFullscreen) { /* Safari */
+      this.webkitRequestFullscreen();
+    } else if (this.msRequestFullscreen) { /* IE11 */
+      this.msRequestFullscreen();
+    }
+});
