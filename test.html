@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fixed Active/Inactive Marquee Effect</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .parent-container {
+      border: 2px solid #ccc;
+      padding: 10px;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .parent-container.active {
+      border-color: #4CAF50;
+      background-color: #f8fff8;
+    }
+    
+    .parent-container.inactive {
+      border-color: #ccc;
+      background-color: #f1f1f1;
+      opacity: 0.7;
+    }
+
+    .marquee-container {
+      position: relative;
+      width: 100%;
+      height: 50px;
+      overflow: hidden;
+      background-color: rgba(255, 255, 255, 0.7);
+    }
+
+    .marquee {
+      position: absolute;
+      white-space: nowrap;
+      width: fit-content;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Base animation settings for all spans */
+    .marquee span {
+      display: inline-block;
+      padding-left: 100%;
+      font-size: 18px;
+      color: #333;
+      animation: marquee 15s linear infinite;
+      animation-play-state: paused;
+    }
+
+    /* First span */
+    .marquee span:first-child {
+      animation-delay: 0s;
+    }
+
+    /* Second span */
+    .marquee span:last-child {
+      animation-delay: 3.5s;
+    }
+
+    /* Only play animation when parent is active */
+    .parent-container.active .marquee span {
+      animation-play-state: running;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(-100%, 0);
+      }
+    }
+
+    /* Controls for demo */
+    .controls {
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 8px 16px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="controls">
+    <button id="toggleActive">Toggle Active State</button>
+  </div>
+
+  <div id="parentContainer" class="parent-container active">
+    <h3>Parent Container (Currently Active)</h3>
+    <div class="marquee-container">
+      <div class="marquee">
+        <span>This marquee scrolls only when the parent is active — Animation pauses when parent is inactive — &nbsp;</span>
+        <span>22222 This marquee scrolls only when the parent is active — Animation pauses when parent is inactive — &nbsp;</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Demo functionality to toggle active state
+    const toggleButton = document.getElementById('toggleActive');
+    const parentContainer = document.getElementById('parentContainer');
+    
+    toggleButton.addEventListener('click', function() {
+      if (parentContainer.classList.contains('active')) {
+        parentContainer.classList.remove('active');
+        parentContainer.classList.add('inactive');
+        parentContainer.querySelector('h3').textContent = 'Parent Container (Currently Inactive)';
+      } else {
+        parentContainer.classList.remove('inactive');
+        parentContainer.classList.add('active');
+        parentContainer.querySelector('h3').textContent = 'Parent Container (Currently Active)';
+      }
+    });
+  </script>
+</body>
+</html>

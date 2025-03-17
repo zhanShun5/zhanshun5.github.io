@@ -10,10 +10,6 @@
 } */
 
 @font-face {
-    font-family: 'Archivo-Narrow';
-    src: url('font/Archivo_Narrow/ArchivoNarrow-VariableFont_wght.ttf') format('woff2');
-}
-@font-face {
     font-family: 'Tenor-Sans';
     src: url('font/Tenor_Sans/TenorSans-Regular.ttf') format('woff2');
 }
@@ -41,7 +37,7 @@ html {
 body{
     background-image: 
         url("image/black-mamba.png"), 
-        linear-gradient(to top, var(--color-one) 35%, var(--color-three) 90%, var(--color-four) 100%);
+        linear-gradient(to top, var(--color-one) 38%, var(--color-three) 75%, var(--color-four) 100%);
     background-attachment: fixed;
     min-height: 100%;
     
@@ -68,11 +64,11 @@ header{
 }
 
 p{
-    font-family: Archivo-Narrow;
+    font-family: sans-serif;
 }
 
 .container{
-    width: 90%;
+    width: 85%;
     height: 90%;
     padding: 2rem;
     border-radius: 2rem 2rem 2rem 2rem / 1.5rem 1.5rem 1.5rem 1.5rem;
