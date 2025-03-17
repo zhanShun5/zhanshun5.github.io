@@ -75,6 +75,16 @@
             /* border: 2px solid red; */
             width: auto;
             color: whitesmoke;
+
+            text-decoration: none;
+            background:  no-repeat 0 100%;
+            background-image: linear-gradient(currentColor, currentColor);
+            background-size: 0% 2px;
+            transition: background-size .3s ease;
+
+        }
+        a:hover, a:focus {
+            background-size: 100% 2px;
         }
     }
 }
@@ -109,7 +119,25 @@
         border: 3px solid rgba(27, 27, 32, 0.644);
 
         width: 80%;
+    
+        h2 {
+            padding: 30px 0 8px;
+            position: relative;
+        }
 
+        h2::before {
+            content: "";
+            position: absolute;
+            left: 7%;
+            bottom: 16px;
+            width: 150px;
+            height: 14px;
+            transform: skew(-12deg) translateX(-50%);
+            background: rgba(238,111,87,0.5);
+            z-index: -1;
+        }
+      
+  
         h2,
         p{
             line-height: 2.8rem;
@@ -117,6 +145,22 @@
             font-family: 'Times New Roman', Times, serif;
             font-weight: 500;
         }
+
+        strong {
+            position: relative;
+            /* adjust the 40% and 80% values to control the vertical position and thickness of the highlight. */
+            background-image: linear-gradient(to bottom, transparent 10%, #992c2c 50%, #882929 80%, transparent 80%);
+            background-size: 100% 100%;
+            color: rgb(10, 10, 10);
+            font-weight: bold;
+            padding: 0 2px;
+            margin: 0 -2px;
+        }
+          
+        strong::before {
+            content: none;
+        }
+
     }
     .contact-container{
         background-color: var(--color-five);
