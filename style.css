@@ -120,7 +120,7 @@ p{
         "Box10 Box10 Box11 Box11"     
         "Box12 Box12 Box12 Box12"
         "Box13 Box13 Box14 Box14"
-        "Box15 Box16 Box16 Box16"
+        "Box15 Box15 Box15 Box15"
       ;
     
 
@@ -399,7 +399,7 @@ footer{
             "Box10 Box11"
             "Box12 Box12"
             "Box13 Box14"
-            "Box15 Box16";
+            "Box15 Box15";
             
         .Box {
             padding: 20px;
