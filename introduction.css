@@ -74,7 +74,7 @@
         a{
             /* border: 2px solid red; */
             width: auto;
-            color: whitesmoke;
+            color: rgba(249, 251, 255, 0.96);
 
             text-decoration: none;
             background:  no-repeat 0 100%;
@@ -85,6 +85,7 @@
         }
         a:hover, a:focus {
             background-size: 100% 2px;
+            color: white;
         }
     }
 }
@@ -118,7 +119,7 @@
     .background-container{
         background-image: url("image/lined-paper-2.png");
         background-color: rgba(246, 252, 255, 0.144);
-        color: rgba(249, 251, 255, 0.877);
+        color: rgba(249, 251, 255, 0.96);
 
         border: 3px solid rgba(27, 27, 32, 0.644);
 
@@ -150,18 +151,24 @@
             font-weight: 500;
         }
     }
-    .contact-container{
-        background-color: var(--color-five);
- 
-
-        width: 70%;
-        height: 120%;
-       
-        font-size: 17px;
-        font-weight: 650;
-        word-spacing: 10vw;
-    }    
 }
+
+.contact-container{
+
+    margin: auto;
+    width: 15%;
+    height: 120%;
+    
+    color: rgba(249, 251, 255, 0.80);
+    place-items: center;
+    font-size: 125%;
+    font-weight: 650;
+    word-spacing: 2vw;
+
+    -moz-border-radius-topleft: 30px 20px;
+    border-bottom: 4.5px dotted var(--color-four);
+    
+}    
 
 strong {
     position: relative;

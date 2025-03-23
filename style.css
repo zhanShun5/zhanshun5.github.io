@@ -167,7 +167,6 @@ p{
             text-align: center;
         }
     }
-    .BoxM {grid-area: BoxM;}
     .Box1 { grid-area: Box1; }
     .Box2 { grid-area: Box2; }
     .Box3 { grid-area: Box3; }
