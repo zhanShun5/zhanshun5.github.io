@@ -145,26 +145,10 @@
         h2,
         p{
             line-height: 2.8rem;
-            font-size: 1.5rem;
+            font-size: 150%;
             font-family: 'Times New Roman', Times, serif;
             font-weight: 500;
         }
-
-        strong {
-            position: relative;
-            /* adjust the 40% and 80% values to control the vertical position and thickness of the highlight. */
-            background-image: linear-gradient(to bottom, transparent 10%, #992c2c 50%, #882929 80%, transparent 80%);
-            background-size: 100% 100%;
-            color: rgb(10, 10, 10);
-            font-weight: bold;
-            padding: 0 2px;
-            margin: 0 -2px;
-        }
-          
-        strong::before {
-            content: none;
-        }
-
     }
     .contact-container{
         background-color: var(--color-five);
@@ -179,6 +163,22 @@
     }    
 }
 
+strong {
+    position: relative;
+    /* adjust the 40% and 80% values to control the vertical position and thickness of the highlight. */
+    background-image: linear-gradient(to bottom, transparent 10%, #992c2c 50%, #882929 80%, transparent 80%);
+    background-size: 100% 100%;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    padding: 0 2px;
+    margin: 0 -2px;
+
+    font-size: 150%;
+}
+  
+strong::before {
+    content: none;
+}
 
 
 /* Media Queries for Responsiveness */
