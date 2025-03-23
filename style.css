@@ -111,7 +111,6 @@ p{
     -moz-border-radius-topleft: 30px 20px;
 
     grid-template-areas:
-        "BoxM BoxM BoxM BoxM"
         "Box17 Box17 Box18 Box18"
         "Box19 Box19 Box19 Box19"
         "Box1 Box1 Box2 Box2"
