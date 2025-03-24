@@ -219,8 +219,8 @@ p{
     color: rgb(0, 0, 0);
     border: none;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     visibility: hidden;
     cursor: pointer;
 
@@ -346,11 +346,18 @@ footer{
     }
 }
 
+@media screen and (max-width: 1600px) {
+    
+    html {
+        font-size: 12px;
+    }
+}
 
 /* Media queries for responsive design */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1300px) {
+    
     html {
-        font-size: 14px;
+        font-size: 11px;
     }
     
     .side-project-container-title {
@@ -362,11 +369,19 @@ footer{
         grid-gap: 0.4em 0.4em;
         grid-template-rows: repeat(11, .6fr);  
     }
+    #scrollToTopBtn {
+        width: 20px;
+        height: 20px;
+    }
+    #scrollToTopBtn::after {
+        content: "↑";
+        font-size: 14px;
+    }
 }
 
 @media screen and (max-width: 992px) {
     html {
-        font-size: 13px;
+        font-size: 10px;
     }
     
     .container {
@@ -437,9 +452,10 @@ footer{
 
 @media screen and (max-width: 768px) {
     html {
-        font-size: 20px;
+        font-size: 13px;
     }
     
+
     h1, h2, h3, header {
         -webkit-text-stroke: 1px rgb(0, 0, 0);
     }
@@ -487,7 +503,7 @@ footer{
 
 @media screen and (max-width: 480px) {
     html {
-        font-size: 12px;
+        font-size: 13px;
     }
     
     .container {
