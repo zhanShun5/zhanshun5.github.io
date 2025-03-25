@@ -379,11 +379,11 @@
     padding-left: 100%;
     
     font-family: seveneleven;
-    font-size: 100%;
+    font-size: 120%;
     font-weight: 400;
     color: #D88853;
 
-    animation: marquee 6.5s linear infinite;
+    animation: marquee 8.5s linear infinite;
     animation-play-state: paused;
 }
 
@@ -395,7 +395,7 @@
 
 
 .marquee2 span {
-    animation-delay: 2.5s;
+    animation-delay: 4.5s;
 }
 
 
