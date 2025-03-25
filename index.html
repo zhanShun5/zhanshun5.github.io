@@ -8,13 +8,15 @@
         <script src="scripts/tabtitle.js" async></script>
         <script src="scripts/script.js" async></script>
         <script src="scripts/musicplayer.js" defer></script>
+        <script>                    
+        // Ensure page starts at top on load and refresh
+            if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+            }
+        </script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Portfolio showcasing creative works and projects">
-
-        <!-- Preload critical images
-        <link rel="preload" as="image" href="path-to-first-visible-image.jpg"> -->
-
 
         <title> - Shunde Zhang Game Development Portfolio - </title>
     </head>
@@ -25,16 +27,35 @@
                 <header >Game Designer Porfolio</header>
                 <div id="underline">by Shunde Zhang</div>
             </div>
-            <div class="navigator container"> 
+            <div class="navigator container">
                 <nav>
                     <a href="#Game1">White-Yellowish Motel</a>
                     <a href="#Game2">Virtual Garden</a>
                     <a href="#Game3">Open9To5</a>
                     <a href="#Miscellaneous">Miscellaneous</a>
                 </nav>
+                <script>
+                    document.querySelectorAll('nav a').forEach(link => {
+                        link.addEventListener('click', function(event) {
+                            event.preventDefault();
+                            
+                            // Get the target element's ID
+                            const targetId = this.getAttribute('href').substring(1);
+                            const targetElement = document.getElementById(targetId);
+                            
+                            if (targetElement) {
+                                // Scroll to the element
+                                targetElement.scrollIntoView({ behavior: 'smooth' });
+                                
+                                // Remove the hash from the URL
+                                history.replaceState(null, '', window.location.pathname);
+                            }
+                        });
+                    });
+                </script>
             </div>
             <div class="contact-container container">
-                <p>Email: s.zh@web.de</p>
+                <p>shunzhan15@gmail.com</p>
             </div>
             <div class="about-container">
                 <div class="background-container container">
@@ -751,5 +772,5 @@
         // Check visibility on scroll
         window.addEventListener("scroll", checkVisibility);
       });
-      </script>
+    </script>
 </html>
