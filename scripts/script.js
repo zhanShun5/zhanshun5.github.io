@@ -1,33 +1,87 @@
 // -----------------------------------  Handle Image Modal --------------------------
-// Get the modal
-const modal = document.getElementById("myModal");
-const modalImg = document.getElementById("img01");
-const captionText = document.getElementById("modal-caption");
+const initImageModal = () => {
+    // Get the modal elements
+    const modal = document.getElementById("myModal");
+    const modalImg = document.getElementById("img01");
+    const captionText = document.getElementById("modal-caption");
+    const span = document.querySelector(".close");
 
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-const imgas = document.querySelectorAll(".image-container-img");
-imgas.forEach(function(img) {
-    img.addEventListener('click' ,function(){
-        modal.style.display = "block";
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
-        disableScroll()
-      })
-});
+    // Ensure all elements exist before proceeding
+    if (!modal || !modalImg || !captionText || !span) {
+        console.error('One or more modal elements are missing');
+        return;
+    }
 
+    // Function to open modal
+    const openModal = (img) => {
+        try {
+            modal.style.display = "block";
+            modalImg.src = img.src;
+            captionText.innerHTML = img.alt || 'Image';
+            
+            // Disable scroll
+            document.body.style.overflow = 'hidden';
+        } catch (error) {
+            console.error('Error opening modal:', error);
+        }
+    };
 
-// Get the <span> element that closes the modal
-const span = document.getElementsByClassName("close")[0];
-// When the user clicks on <span> (x), close the modal
-span.addEventListener('click', () => {
-    modal.style.display = "none";
-    enableScroll();
-});
+    // Function to close modal
+    const closeModal = () => {
+        try {
+            modal.style.display = "none";
+            
+            // Re-enable scroll
+            document.body.style.overflow = 'auto';
+        } catch (error) {
+            console.error('Error closing modal:', error);
+        }
+    };
 
-document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') 
-        modal.style.display = "none";
-        enableScroll();
+    // Remove previous event listeners to prevent duplicates
+    const imgas = document.querySelectorAll(".image-container-img");
+    imgas.forEach(function(img) {
+        // Remove existing listeners first
+        img.removeEventListener('click', () => openModal(img));
+        
+        // Add new listener
+        img.addEventListener('click', () => openModal(img));
+    });
+
+    // Close modal when clicking span (x)
+    span.removeEventListener('click', closeModal);
+    span.addEventListener('click', closeModal);
+
+    // Close modal on Escape key
+    document.removeEventListener('keydown', handleEscapeKey);
+    document.addEventListener('keydown', handleEscapeKey);
+
+    // Separate function for Escape key to allow removal
+    function handleEscapeKey(e) {
+        if (e.key === 'Escape') {
+            closeModal();
+        }
+    }
+
+    // Optional: Close modal when clicking outside the image
+    modal.removeEventListener('click', handleOutsideClick);
+    modal.addEventListener('click', handleOutsideClick);
+
+    function handleOutsideClick(e) {
+        if (e.target === modal) {
+            closeModal();
+        }
+    }
+};
+
+// Ensure script runs after DOM is fully loaded
+document.addEventListener('DOMContentLoaded', initImageModal);
+
+// Reinitialize on page show (helps with browser navigation)
+window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+        initImageModal();
+    }
 });
 
 
@@ -78,15 +132,15 @@ scrollToTopBtn.addEventListener("click", scrollToTop);
 
 
 
-// On click fullscreen
-document.querySelectorAll('CCVideo').addEventListener('click', function() {
-    if (this.requestFullscreen) {
-      this.requestFullscreen();
-    } else if (this.webkitRequestFullscreen) { /* Safari */
-      this.webkitRequestFullscreen();
-    } else if (this.msRequestFullscreen) { /* IE11 */
-      this.msRequestFullscreen();
-    }
-});
+// // On click fullscreen
+// document.querySelectorAll('CCVideo').addEventListener('click', function() {
+//     if (this.requestFullscreen) {
+//       this.requestFullscreen();
+//     } else if (this.webkitRequestFullscreen) { /* Safari */
+//       this.webkitRequestFullscreen();
+//     } else if (this.msRequestFullscreen) { /* IE11 */
+//       this.msRequestFullscreen();
+//     }
+// });
 
 

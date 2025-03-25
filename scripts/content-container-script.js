@@ -58,9 +58,9 @@ const initContentContainerScript = () => {
 // Ensure script runs after DOM is fully loaded
 document.addEventListener('DOMContentLoaded', initContentContainerScript);
 
-// // Optional: Reinitialize on page show (helps with browser navigation)
-// window.addEventListener('pageshow', (event) => {
-//     if (event.persisted) {
-//         initContentContainerScript();
-//     }
-// });
+// Optional: Reinitialize on page show (helps with browser navigation)
+window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+        initContentContainerScript();
+    }
+});
