@@ -75,6 +75,15 @@ p{
 }
 
 
+.side-project-header{
+    font-size: 525%;
+    font-family: baisteach;
+    color: rgb(230, 243, 255);
+
+    margin-bottom: 2.5%;
+    text-shadow: 
+        2px 2px 20px rgb(0, 0, 0);
+}
 
 .side-project-container-title{
     font-size: 5rem;
@@ -456,9 +465,7 @@ footer{
     }
     
 
-    h1, h2, h3, header {
-        -webkit-text-stroke: 1px rgb(0, 0, 0);
-    }
+
     
     .side-project-container-title {
         font-size: 3rem;

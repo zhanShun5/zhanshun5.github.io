@@ -2,68 +2,83 @@
 const SCROLL_OFFSET = 200;
 const SCROLL_DELAY = 150;
 
-// Function to initialize event listeners and setup
-const initContentContainerScript = () => {
-    // Cache DOM elements
-    const allContentContainers = document.querySelectorAll('.content-container');
-    const allCImages = document.querySelectorAll('.img-container img');
 
-    // Helper function for scrolling to element
-    const scrollToElement = (element) => {
-        const rect = element.getBoundingClientRect();
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-        const targetPosition = rect.top + scrollTop - SCROLL_OFFSET;
+// Cache DOM elements
+const allContentContainers = document.querySelectorAll('.content-container');
+const allCImages = document.querySelectorAll('.img-container img');
 
-        window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-        });
-    };
+// Helper function for scrolling to element
+const scrollToElement = (element) => {
+    const rect = element.getBoundingClientRect();
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const targetPosition = rect.top + scrollTop - SCROLL_OFFSET;
 
-    // Helper function to toggle content containers
-    const toggleContentContainer = (clickedImageAlt) => {
-        allContentContainers.forEach(container => {
-            if (container.title === clickedImageAlt) {
-                const wasInactive = !container.classList.contains('active');
-                container.classList.toggle('active');
-                
-                if (wasInactive) {
-                    setTimeout(() => scrollToElement(container), SCROLL_DELAY);
-                }
-            }
-        });
-    };
-
-    // Event handler for image clicks
-    const handleImageClick = (e) => {
-        try {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            const imgElement = e.currentTarget;
-            console.log('Clicked image alt:', imgElement.alt);
-            toggleContentContainer(imgElement.alt);
-        } catch (error) {
-            console.error('Error handling image click:', error);
-        }
-    };
-
-    // Remove previous event listeners to prevent multiple attachments
-    allCImages.forEach(img => {
-        img.removeEventListener('click', handleImageClick);
-        img.addEventListener('click', handleImageClick);
+    window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
     });
 };
 
-// Ensure script runs after DOM is fully loaded
-document.addEventListener('DOMContentLoaded', initContentContainerScript);
+//  KEEP it so the whole button activates the content, instead of only image, for accesibility and ease.
+var coll = document.getElementsByClassName("collapsible");
+var i;
 
-// Optional: Reinitialize on page show (helps with browser navigation)
-window.addEventListener('pageshow', (event) => {
-    if (event.persisted) {
-        initContentContainerScript();
-    }
-});
+for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        content.classList.toggle("active");
+        if (this.classList.contains('active')){
+            setTimeout(() => scrollToElement(content), SCROLL_DELAY);
+        }
+    });
+}
+
+
+
+// // Ensure script runs after DOM is fully loaded
+// document.addEventListener('DOMContentLoaded', initContentContainerScript);
+
+// // Optional: Reinitialize on page show (helps with browser navigation)
+// window.addEventListener('pageshow', (event) => {
+//     if (event.persisted) {
+//         initContentContainerScript();
+//     }
+// });
+
+// // Function to initialize event listeners and setup
+// const initContentContainerScript = () => {
+//     // Cache DOM elements
+//     const allContentContainers = document.querySelectorAll('.content-container');
+//     const allCImages = document.querySelectorAll('.img-container img');
+
+//     // Helper function for scrolling to element
+//     const scrollToElement = (element) => {
+//         const rect = element.getBoundingClientRect();
+//         const scrollTop = window.scrollY || document.documentElement.scrollTop;
+//         const targetPosition = rect.top + scrollTop - SCROLL_OFFSET;
+
+//         window.scrollTo({
+//             top: targetPosition,
+//             behavior: 'smooth'
+//         });
+//     };
+
+//     var coll = document.getElementsByClassName("collapsible");
+//     var i;
+    
+//     for (i = 0; i < coll.length; i++) {
+//         coll[i].addEventListener("click", function() {
+//             this.classList.toggle("active");
+//             var content = this.nextElementSibling;
+//             content.classList.toggle("active");
+//             if (this.classList.contains('active')){
+//                 setTimeout(() => scrollToElement(content), SCROLL_DELAY);
+//             }
+//       });
+//     }
+// };
+
 
 
  
