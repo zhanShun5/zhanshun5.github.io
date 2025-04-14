@@ -4,6 +4,7 @@
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="project-style.css">
         <link rel="stylesheet" href="introduction.css">
+        <link rel="stylesheet" href="fade-in.css">
         <script rel="preload" src="scripts/content-container-script.js" async></script>
         <script src="scripts/tabtitle.js" async></script>
         <script src="scripts/script.js" async></script>
@@ -21,6 +22,7 @@
         <title> - Shunde Zhang Game Development Portfolio - </title>
     </head>
     <body>
+        <div id="fadein"></div>
     <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
         <section>
             <div id="hero-header">
@@ -489,7 +491,6 @@
                     <div class="marquee-container">
                         <div class="marquee">
                           <span> --- "Click In, Stock Up, Clock Out" --- "from 9to5 - Always Open When You Need Us" --- "Shop While You Work" --- &nbsp;</span>
-                          <!-- <span>22 222 222 22  This marquee scrolls only when the parent is active — Animation pauses when parent is inactive — &nbsp;</span> -->
                         </div>
                         <div class="marquee marquee2">
                             <span> --- "Browse During Breaks, Delivered by Deadline" --- "Making Monday Through Friday Easier" --- &nbsp;</span>
@@ -559,7 +560,6 @@
                     <div class="marquee-container">
                         <div class="marquee">
                           <span> --- "Working Hard? We're Here to Help" --- "Your Outside Break Room" --- "Oh Thank Heaven for 9to5" --- &nbsp;</span>
-                          <!-- <span>22 222 222 22  This marquee scrolls only when the parent is active — Animation pauses when parent is inactive — &nbsp;</span> -->
                         </div>
                         <div class="marquee marquee2">
                             <span> --- "from 9to5 - We Work When You Work" --- "Your Workday Destination" --- "Work Hard, Shop Easy at from 9to5" --- &nbsp;</span>
@@ -721,6 +721,7 @@
             <div id="modal-caption"></div>
         </div>
     </body>
+    <script src="scripts/fade-in.js" async></script>
     <script>document.addEventListener("DOMContentLoaded", function() {
         const fadeElements = document.querySelectorAll('.fade-in');
         
