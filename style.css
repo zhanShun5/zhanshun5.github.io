@@ -3,6 +3,22 @@
     --color-two: #C6C5B9;
     --color-three: #003c58;
     --color-four: #02628f;
+
+    --background-color-monitor: #C6C6C6;
+    --background-color-monitor-2: #9b9b9b;
+
+    --sidebar-background-color: #02628f96;
+    --sidebar-contact-font-size: 2.5rem;
+    --sidebar-button-font-size: 2rem;
+
+    --font-border-color-1: #e6e6e6;
+    --font-border-color-2: #373737;
+
+    --transition-speed : 0.3s;
+    --music-player-color-1: #4572f0;
+    --music-player-color-2: aliceblue;
+    --music-player-color-3: #1e4dac;
+
 }
 
 /* *{
@@ -11,25 +27,29 @@
 
 @font-face {
     font-family: 'Tenor-Sans';
-    src: url('font/Tenor_Sans/TenorSans-Regular.ttf') format('woff2');
+    src: url('font/Tenor_Sans/TenorSans-Regular.ttf') format('truetype');
 }
 @font-face {
     font-family: 'ddaftt';
-    src: url('font/ddaftt/dDAFTt-U.ttf') format('woff2');
+    src: url('font/ddaftt/dDAFTt-U.ttf') format('truetype');
 }
 @font-face {
     font-family: 'brown-sugar';
-    src: url('font/brown_sugar/Brown-Sugar.ttf') format('woff2');
+    src: url('font/brown_sugar/Brown-Sugar.ttf') format('truetype');
 }
 @font-face {
     font-family: 'seveneleven';
-    src: url('font/7ELEVEN.ttf') format('woff2');
+    src: url('font/7ELEVEN.ttf') format('truetype');
 }
 
 
 html {
     scroll-behavior: smooth;
     overscroll-behavior: none;
+    overflow-x: hidden;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -50,8 +70,8 @@ body{
 
 /* ################### LINE accros screen  */
 hr {  
-    border: 3px solid white;
-    margin: 0rem 0rem 5rem 0rem;   
+    border: 3px dashed var(--color-three);
+    margin: 10rem;   
     width: 100%;
 }
 
@@ -67,6 +87,14 @@ p{
     font-family: sans-serif;
 }
 
+ /* make scrollbar transparent */
+::-webkit-scrollbar {
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+    background: transparent;
+}
+
 .container{
     width: 85%;
     height: 90%;
@@ -74,155 +102,240 @@ p{
     border-radius: 2rem 2rem 2rem 2rem / 1.5rem 1.5rem 1.5rem 1.5rem;
 }
 
+/* ------------------------------------- Animate on Scroll -----------------------------------  */
 
+.aScroll{
+    animation: appear linear;
+    /* animation applies based on the amount in which the object is in view of the screen */
+        /* eg. half on the screen 50% of animation is applaied. 99% at the top of the viewport, 99% applied */
+    animation-timeline: view(); 
+    /* Animation start to happen when the obj enteres the viewport */
+        /* cover 40%: Animation finishes when the object enters 40% of the viewport */
+    animation-range: entry 0% cover 45%;
+}
+
+@keyframes appear{
+    from{
+        opacity: 0;
+        scale: .95;
+        transform: translateY(200px);
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+        transform: translateY(0px);
+    }
+}
+
+/* ------------------------------------- Sideprojects -----------------------------------  */
 .side-project-header{
     font-size: 525%;
     font-family: baisteach;
     color: rgb(230, 243, 255);
 
-    margin-bottom: 2.5%;
+    margin-bottom: 6%;
     text-shadow: 
         2px 2px 20px rgb(0, 0, 0);
 }
 
-.side-project-container-title{
-    font-size: 5rem;
-    font-weight: 400;
-}
+#monitor-projection{
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
 
-
-.side-project-container{
-
-    color: whitesmoke;
+    align-items: center;
+    justify-content: center;
+    
+    height: 85vh;
+    width: 60%;
 
     margin: auto;
-    width: 75%;
 
-    background-color: #00061400;
-    background-image: url("image/light-sketch.png");
-    
-
-    display: grid; 
-    /* defines the width of each column */
-    grid-template-columns: 1fr 1fr 1fr 1fr; 
-    /*  defines the height of each row */
-    grid-template-rows: repeat(12, .8fr);   
-    grid-gap: .5em .5em; 
-    
-    min-width: 0;
-    overflow: hidden;
-    
-
-    /* Decorative borders */
-    border-left: 4.5px dotted whitesmoke;
-    border-right: 4.5px dotted whitesmoke;
-    -moz-border-radius-topright: 30px 20px;
-    -moz-border-radius-topleft: 30px 20px;
-
-    grid-template-areas:
-        "Box17 Box17 Box18 Box18"
-        "Box19 Box19 Box19 Box19"
-        "Box1 Box1 Box2 Box2"
-        "Box3 Box3 Box2 Box2"
-        "Box6 Box6 Box6 Box6"
-        "Box5 Box5 Box4 Box4"
-        "Box7 Box7 Box8 Box8"
-        "Box9 Box9 Box21 Box21"
-        "Box20 Box20 Box21 Box21"
-        "Box10 Box10 Box11 Box11"     
-        "Box12 Box12 Box12 Box12"
-        "Box13 Box13 Box14 Box14"
-        "Box15 Box15 Box15 Box15"
-      ;
-    
-
-
-    .Box { 
-        /* border: 2px dotted rgba(255, 0, 0, 0.356); */
-        display: flex;
-        flex-direction: column;
-
-        align-items: center;
-        justify-content: center;
-
-        gap: 10px;
-        padding: 25px;
-
-        iframe{
-            width: 90%;
-            height: 480px;
-
-            display: block;
-            margin: 0 auto;
-
-            border: 1px dashed lightblue;
-        }
-
-        img {
-            min-width: 80%;
-            max-width: 90%;
-            max-height: 100%;
-
-            display: block; 
-            margin: 0 auto; 
-            
-            border: 1px dashed rgb(83, 141, 160);
-            
-        }
-        p{
-            font-size: 180%;
-            margin-bottom: 20px;
-            font-weight: 900;
-            text-align: center;
-        }
-    }
-    .Box1 { grid-area: Box1; }
-    .Box2 { grid-area: Box2; }
-    .Box3 { grid-area: Box3; }
-    .Box4 { grid-area: Box4; }
-    .Box5 { grid-area: Box5; }
-    .Box6 { grid-area: Box6; }
-    .Box7 { grid-area: Box7; }
-    .Box8 { grid-area: Box8; }
-    .Box9 { grid-area: Box9;}
-    .Box20 { grid-area: Box20;}
-    .Box21 { 
-        grid-area: Box21;
-    }
-    .Box10 { grid-area: Box10; }
-    .Box11 { grid-area: Box11; }
-    .Box12 { 
-        grid-area: Box12;
-        width: 80%;
-    }
-    .Box13 { grid-area: Box13; }
-    .Box14 { grid-area: Box14; }
-    .Box15 { grid-area: Box15; }
-    .Box16 { grid-area: Box16; }
-    .Box17 { grid-area: Box17; }
-    .Box18 { grid-area: Box18; }
-    .Box19 {
-         grid-area: Box19;
-        iframe{height: 560px;}}
+    margin-top: 2%;
+    margin-bottom: 4%;
 }
 
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  }
-  
-.fade-in.visible {
-    opacity: 100%;
-    transform: translateY(0);
+#hotbar{
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: start;
+    justify-content: start;
+
+    min-height: 15%;
+    max-width: 90%;
+    height: auto;
+    width: auto;
+
+    color: aliceblue;
+    font-size: large;
+    background-color: #313131;
+    border: 4px solid black;
+
+    overflow-y: hidden;
+    overflow-x: scroll;
+
+    pointer-events: click; /* unclicable*/
+}
+#hotbar h3{
+    padding: .5rem;
+    font-size: 1.4rem;
+}
+#hotbar button{
+    position: relative;
+    height: 100%;
+    min-width: 128px;
+    width: auto;
+
+    flex: 1;
+    color: aliceblue;
+    font-family: 'Tenor-Sans';
+    font-size: large;
+    text-align: center;
+
+    background-color: #31313157;
+    opacity: .5;
+    overflow: show;
+    z-index: 2;
+
+    padding: 1rem;
+}
+
+#hotbar button img {
+    margin: auto;
+    padding: 1rem;
+    max-height: 100%; 
+    max-width: 100%; 
+    width: auto;
+    height: auto;
+}
+
+#hotbar button:hover{
+    transform: scale(1.1);
+    opacity: 1.0;
+    z-index: 3;
+    border: 4px solid black;
+    border-left: 4px solid rgba(0, 0, 0, 0.75);
+    border-right: 4px solid rgba(0, 0, 0, 0.75);
+}
+#hotbar button.active{
+    opacity: 1.2;
+    z-index: 2;
+    border-left: 4px groove rgba(200, 200, 200, 0.85);
+    border-right: 4px groove rgba(200, 200, 200, 0.85);
+}
+/* Create the MC container background image */
+#hotbar button::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+    background-image: url("image/MC_hotbar_icon.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#monitor{
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+
+    width: 100%;
+    min-height: 80%;
+    height: auto;
+    padding: 4%;
+
+    margin-bottom: 2.5%;
+
+    font-size: larger;
+    color: var(--font-color-2);
+    line-height: 1.8;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    background-image: url("image/crystalized.png");
+    background-color: var(--background-color-monitor);
+
+    border: 6px solid var(--font-border-color-1);
+    border-bottom: 6px solid var(--font-border-color-2);
+    border-right: 6px solid var(--font-border-color-2);
+}
+
+
+.monitor-content {
+    display: none;
+    position: relative;
+    animation: animateUp 0.6s;
+    
+    min-height: 20%;
+    height: auto;
+
+    margin: auto;
+    flex: 1 0 auto;
+
+    padding: 2.5rem;
+
+    font-size: 1.6rem;
+    font-family: 'Tenor-Sans';
+
+    background-color: var(--background-color-monitor-2);
+    background-image: url("image/mooning.png");
+    border: 3px solid var(--font-border-color-2);
+    border-bottom: 3px solid var(--font-border-color-1);
+    border-right: 3px solid var(--font-border-color-1);
+}
+
+
+.monitor-content img{
+    margin: 1rem;
+    padding: .25rem;
+    max-height: 90%; 
+    max-width: 95%; 
+    width: auto;
+    height: auto;
+
+    border: 2px dashed rgba(245, 245, 245, 0.85);
+}
+
+.monitor-content iframe{
+    aspect-ratio: 16 / 9;
+    background: #333;
+    border-radius: 12px;
+
+    width: 100%;
+    height: auto;
+
+    max-width: 100%;
+    
+    cursor: pointer;
+
+    border: 2px dashed rgba(245, 245, 245, 0.85);
+}
+
+
+
+@keyframes animateUp{
+    from{
+        bottom:-90%;
+        opacity:0;
+    } 
+    to{
+        bottom:0;
+        opacity:1;
+    };
 }
 
 /* ------------------------------------------ Scroll to the top button ------------------------------------------ */ 
 
 #scrollToTopBtn {
     position: fixed;
-    bottom: 50px;
-    right: 50px;
+    bottom: 30px;
+    right: 45px;
     background-color: #ffffff;
     background-image: url("image/lined-paper.png");
     color: rgb(0, 0, 0);
@@ -235,9 +348,8 @@ p{
 
     opacity: 0;
     animation: rotateAnimation 5s linear infinite;
-    transition: all var(--transition-speed) ease-in-out;
+    transition: opacity var(--transition-speed) ease-in-out;
     z-index: 5;
-
 }
 
 #scrollToTopBtn:hover {
@@ -270,7 +382,90 @@ footer{
     background-image: url("image/lined-paper-2.png");
 }
 
+/* ------------------------------------------ Sidebar Contact ------------------------------------------ */
 
+#sidebar-open-button{
+    width: 40px;
+    height: 40px;
+
+    position: fixed;
+    top: 30px;
+    left: 45px;
+
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    visibility: hidden;
+    opacity: 0;
+
+    animation: rotateAnimation 5s linear infinite;
+    transition: opacity var(--transition-speed) ease-in-out;
+    z-index: 5;
+}
+
+#sidebar-open-button.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+#sidebar-opne-button:hover {
+    background-color: #333;
+}
+
+.sidebar-button{
+    display: block;
+    height:6%;
+    width:100%;
+
+    margin-bottom: 1rem;
+
+    border: 2px solid black;
+    font-size: var(--sidebar-button-font-size);
+}
+.sidebar-button:hover{
+    background-color: #000a1f77;
+}
+
+#sidebar-contact{
+    display: none;
+    position:fixed;
+    left: 0%;
+    top: 0%;
+    height:90%;
+    width:30%;
+
+    font-size: var(--sidebar-contact-font-size);
+    
+    /* background-color: var(--sidebar-background-color); */
+
+    z-index:4;
+    overflow:auto;
+
+    padding: 1.5rem;
+
+    animation: animateLeft 0.5s;
+}
+
+@keyframes animateLeft{
+    from{
+        transform: translateX(-60%);
+        opacity:0;
+        scale: .6;
+    } 
+    to{
+        transform: translateX(0);
+        opacity:1;
+        scale: 1;
+    };
+}
+
+.sidebar-item{
+    display: block;
+}
 
 /* ------------------------------------------ Image Modal  from W3schools------------------------------------------ */ 
 
@@ -369,22 +564,13 @@ footer{
         font-size: 11px;
     }
     
-    .side-project-container-title {
-        font-size: 4rem;
-    }
-    
-    .side-project-container {
-        padding: 60px;
-        grid-gap: 0.4em 0.4em;
-        grid-template-rows: repeat(11, .6fr);  
-    }
     #scrollToTopBtn {
-        width: 20px;
-        height: 20px;
+        width: 40px;
+        height: 40px;
     }
     #scrollToTopBtn::after {
         content: "↑";
-        font-size: 14px;
+        font-size: 20px;
     }
 }
 
@@ -396,49 +582,6 @@ footer{
     .container {
         width: 95%;
         padding: 1.5rem;
-    }
-    
-    .side-project-container-title {
-        font-size: 3.5rem;
-    }
-    
-    .side-project-container {
-
-        margin: auto;
-        width: 75%;
-
-        padding: 40px;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: repeat(15, .25fr);   
-        grid-template-areas: 
-            "Box17 Box17"
-            "Box18 Box18"
-            "Box19 Box19"
-            "Box1 Box1"
-            "Box2 Box2"
-            "Box3 Box3"
-            "Box6 Box6"
-            "Box4 Box4"
-            "Box5 Box5"
-            "Box7 Box8"
-            "Box9 Box20"
-            "Box21 Box21"
-            "Box10 Box11"
-            "Box12 Box12"
-            "Box13 Box14"
-            "Box15 Box15";
-            
-        .Box {
-            padding: 20px;
-            
-            iframe {
-                height: 360px;
-            }
-            
-            p {
-                font-size: 190%;
-            }
-        }
     }
     
     #scrollToTopBtn {
@@ -464,41 +607,6 @@ footer{
         font-size: 10px;
     }
     
-
-
-    
-    .side-project-container-title {
-        font-size: 3rem;
-    }
-    
-    .side-project-container {
-        padding: 30px;
-        grid-gap: 0.3em 0.3em;
-        grid-template-rows: repeat(14, .25fr);   
-        border-left: 3px dotted whitesmoke;
-        border-right: 3px dotted whitesmoke;
-        
-        .Box {
-
-            padding: 15px;
-            min-width: 90%;
-            
-            iframe {
-                height: 300px;
-                width: 95%;
-            }
-            
-            img {
-                min-width: 85%;
-                max-width: 95%;
-            }
-            
-            p {
-                font-size: 120%;
-            }
-        }
-    }
-    
     .close {
         width: auto;
         height: auto;
@@ -519,62 +627,6 @@ footer{
         border-radius: 1rem 1rem 1rem 1rem / 1rem 1rem 1rem 1rem;
     }
     
-    .side-project-container-title {
-        font-size: 2.5rem;
-    }
-    
-    .side-project-container {
-        margin: auto;
-        width: 75%;
-    
-        padding: 20px;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(20, .5fr);   
-        grid-template-areas: 
-            "Box17"
-            "Box18"
-            "Box19"
-            "Box1"
-            "Box2"
-            "Box3"
-            "Box6"
-            "Box4"
-            "Box5"
-            "Box7"
-            "Box8"
-            "Box9"
-            "Box20"
-            "Box21"
-            "Box10"
-            "Box11"
-            "Box12"
-            "Box13"
-            "Box14"
-            "Box15"
-            "Box16";
-            
-        .Box {
-            padding: 10px;
-            min-width: 95%;
-            
-            iframe {
-                height: 250px;
-                width: 100%;
-            }
-            
-            img {
-                min-width: 90%;
-                max-width: 100%;
-            }
-            
-            p {
-                font-size: 160%;
-                margin-bottom: 10px;
-            }
-        }
-        
- 
-    }
     
     #scrollToTopBtn {
         bottom: 20px;
@@ -610,29 +662,32 @@ footer{
 }
 
 
-/* Music Player */
-
-.SP-track-name,
-.SP-artist-name {
-    display: inline-block;
-    text-wrap: nowrap;
-    overflow: hidden;
-    background-color: #00000085;
-    width: 99.5%;
+/* Retro Game Style Music Player CSS */
+@font-face {
+    font-family: 'Pixel';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/jersey15/v3/_6_9EDzuROGsUuk2TWjiZYAg.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 .StarrPlayer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #00000085;
-    padding: 1rem;
-    color: white;
-    width: 35%;
-
-    margin: auto;
-    margin-bottom: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #000000;
+        border: 6px double var(--music-player-color-2);
+        color: var(--music-player-color-2);
+        width: 400px;
+        margin: auto;
+        /* margin-top: 12.5%;
+        margin-bottom: 22.5%; */
+        font-family: 'Pixel', monospace;
+        letter-spacing: 2.5px;
+        padding: 0;
+        box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
 }
 
 .SP-track-info {
@@ -640,17 +695,54 @@ footer{
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    background-color: #00000085;
-    padding: 0;
     width: 100%;
     position: relative;
+    padding: 0;
+    border-bottom: 2px solid var(--music-player-color-1);
 }
 
-.SP-track {
-    font-size: 1.5rem;
-    font-weight: bold;
+/* Control panel section */
+.SP-button-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    background-color: var(--music-player-color-1);
     width: 100%;
-    background-color: #00000085;
+    padding: 8px 15px;
+    box-sizing: border-box;
+    border-bottom: 2px solid #000;
+}
+
+.SP-button {
+  background-color: transparent;
+  color: var(--music-player-color-2);
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  font-size: 20px;
+  font-family: 'Pixel', monospace;
+  padding: 0;
+}
+
+/* Song selection area */
+.SP-track {
+  font-size: 3rem;
+  width: 100%;
+  background-color: #000;
+  text-align: center;
+  padding: 5px 0;
+  border-bottom: 2px solid var(--music-player-color-1);
+}
+
+.SP-track-name {
+    display: inline-block;
+    text-wrap: nowrap;
+    overflow: hidden;
+    width: 99.5%;
+    color: var(--music-player-color-2);
+
+    border-top: 3.5px solid var(--music-player-color-1);
 }
 
 .SP-artist {
@@ -665,6 +757,59 @@ footer{
     background-color: #00000085;
 }
 
+.SP-artist-name{
+    background-color: #000;
+    color: var(--music-player-color-1);
+    padding: 1.5rem 2.0rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    width: 100%;
+    box-sizing: border-box;
+    text-align:  left;
+    border-bottom: 2px solid var(--music-player-color-1);
+
+    overflow: scroll;
+}
+
+/* Song list section */
+#SP-song-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.SP-song-item {
+    width: 90%;
+
+    background-color: #000;
+    color: var(--music-player-color-2);
+    padding: 8px 15px;
+    border: 2px solid var(--music-player-color-1);
+    margin: 1rem;
+    font-size: 1.8rem;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.SP-song-item:nth-child(even) {
+    background-color: #000033;
+    align-self: flex-end;
+}
+
+.SP-song-item:hover {
+    background-color: var(--music-player-color-3);
+}
+.SP-song-item:active {
+    background-color: var(--color-four);
+}
+.SP-song-item.active {
+    background-color: var(--music-player-color-3);
+    scale: 1.1;
+}
+
+/* Progress bar and duration - hide them as they're not in the mockup */
 .SP-duration {
     display: flex;
     justify-content: space-between;
@@ -699,26 +844,42 @@ footer{
     border-radius: 50%;
 }
 
-.SP-button-row {
+/* Navigation at bottom */
+.SP-navigation {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    flex-direction: row;
-    background-color: #00000085;
     width: 100%;
-    gap: 0.5rem;
+    padding: 8px 15px;
+    box-sizing: border-box;
+    background-color: #000;
+
+    border-top: 2px solid var(--music-player-color-1);
+    border-bottom: 2px solid var(--music-player-color-1);
+
+    padding: 1.25rem;
 }
 
-.SP-button {
-    background-color: #ffffff63;
-    color: white;
-    padding: 0.25rem 0.75rem;
-    border: none;
-    cursor: pointer;
-    user-select: none;
+.SP-nav-button {
+  font-family: 'Pixel', monospace;
+  font-size: 18px;
+  color: var(--music-player-color-2);
 }
 
-.SP-button:hover {
-    background-color: #a8a8a863;
+.SP-page-indicator {
+  font-family: 'Pixel', monospace;
+  font-size: 14px;
+  color: var(--music-player-color-2);
 }
 
+/* Additional styles to match the mockup */
+.SP-header {
+  background-color: var(--music-player-color-1);
+  color: var(--music-player-color-2);
+  padding: 8px 15px;
+  font-size: 2.1rem;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+  border-bottom: 2px solid var(--music-player-color-2);
+}

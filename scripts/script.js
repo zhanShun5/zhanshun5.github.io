@@ -117,10 +117,24 @@ function scrollToTop() {
     }
 }
 
-// Optimized scroll handler
+// -----------------------------------  Sidebarbutton --------------------------
+
+const sidebarOpenBtn = document.getElementById("sidebar-open-button");
+
+function openSidebar() {
+    document.getElementById("sidebar-contact").style.display = "block";
+    sidebarOpenBtn.style.display = "none"
+}
+function closeSidebar() {
+    document.getElementById("sidebar-contact").style.display = "none";
+    sidebarOpenBtn.style.display = "block"
+}
+
+// scrolltotopbutton and sidebaropenbutton appear at spezific scroll level.
 function handleScroll() {
     const scrolled = document.documentElement.scrollTop > 100;
     scrollToTopBtn.classList.toggle("visible", scrolled);
+    sidebarOpenBtn.classList.toggle("visible", scrolled);
 }
 
 // Use passive event listener for better scroll performance

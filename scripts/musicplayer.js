@@ -18,6 +18,7 @@ class MusicPlayer {
 
     start = () => {
         this.initializeButtons();
+        this.initializeListItems();
         this.initializeStatefulRenderingInterval();
         this.initializeProgressBar();
     }
@@ -56,6 +57,15 @@ class MusicPlayer {
                     default:
                         break;
                 }
+            });
+        });
+    }
+
+    initializeListItems = () => {
+        let buttons = this.parent_element.querySelectorAll('.SP-song-item');
+        buttons.forEach((button, index) => {
+            button.addEventListener('click', (event) => {
+                this.play_song(index);
             });
         });
     }
@@ -273,6 +283,6 @@ let song_data_absolute = [
 ];
 
 
-// Load the song players manually >🐢
+// Load the song players manually >
 let song_player_basic = document.querySelector(".StarrPlayer");
 let basic_player = new MusicPlayer(song_player_basic, song_data_absolute);

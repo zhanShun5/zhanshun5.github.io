@@ -41,7 +41,6 @@
     }
 }
 
-
 .navigator{
     /* background-color: rgba(246, 252, 255, 0.973);
     background-image: url("image/light-sketch.png"); */
@@ -80,13 +79,34 @@
             background:  no-repeat 0 100%;
             background-image: linear-gradient(currentColor, currentColor);
             background-size: 0% 2px;
-            transition: background-size .3s ease;
+            transition: all .3s ease;
 
         }
         a:hover, a:focus {
             background-size: 100% 2px;
-            color: white;
+            color: aliceblue;
+            animation: shakes;
+            animation-duration: 3.5s;
+            animation-iteration-count: infinite;
         }
+    }
+}
+
+@keyframes shakes{
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+      transform: rotate(2.5deg);
+    }
+    50%{
+      transform: rotate(-2.5deg);
+    }
+    75%{
+      transform: rotate(2.5deg);
+    }
+    100%{
+      transform: rotate(-2.5deg);
     }
 }
 
@@ -109,7 +129,7 @@
     gap: 2.5rem 2rem;
 
 
-    margin-bottom: 25rem;
+    margin-bottom: 5rem;
     margin-top: 5rem;
 
     a{
