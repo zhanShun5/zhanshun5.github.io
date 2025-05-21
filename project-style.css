@@ -142,7 +142,6 @@ button{
         transition: all var(--transition-speed) ease-in-out;
         will-change: opacity, max-height;
         z-index: 2;
-    
 
         /* ------------------------------------------------- Content Text Container ---------------------------------- */
         .text-container{
