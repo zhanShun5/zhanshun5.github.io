@@ -1,0 +1,152 @@
+/* Parallax animation variables */
+:root {
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+}
+
+.floating-image {
+    position: absolute;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    cursor: grab;
+    user-select: none;
+    will-change: transform;
+    transition: all 0.3s ease;
+
+    z-index: -10;
+}
+
+
+.floating-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.6s ease;
+}
+
+.floating-image:hover {
+    transform: scale(1.5);
+    z-index: 5;
+    box-shadow: 0 20px 20px rgba(255, 255, 255, 0.5);
+}
+
+.floating-image:hover img {
+    transform: scale(1.1);
+}
+
+/* Individual image positioning and sizing - using viewport units for responsiveness */
+.image-1 {
+    top: 5vh;
+    left: 8vw;
+    width: min(400px, 15vw);
+    height: min(550px, 22vh);
+    z-index: -3;
+    border: 2px solid rgba(241, 241, 241, 0.24);
+}
+
+.image-2 {
+    top: 12vh;
+    right: 25vw;
+    width: min(380px, 13vw);
+    height: min(440px, 14vh);
+    z-index: -2;
+    border: 2px solid rgba(241, 241, 241, 0.24);
+
+}
+
+.image-3 {
+    top: 25vh;
+    right: 8vw;
+    width: min(420px, 16vw);
+    height: min(460px, 15vh);
+    z-index: -4;
+    border: 2px solid rgba(241, 241, 241, 0.24);
+
+}
+
+.image-4 {
+    bottom: 34vh;
+    left: 14.5vw;
+    width: min(400px, 12vw);
+    height: min(780px, 20vh);
+    z-index: -2;
+    border: 2px solid rgba(241, 241, 241, 0.24);
+
+}
+
+.image-5 {
+    bottom: 28vh;
+    left: 45vw;
+    width: min(340px, 12vw);
+    height: min(650px, 22vh);
+    z-index: -3;
+    border: 2px solid rgba(241, 241, 241, 0.24);
+
+}
+
+.image-6 {
+    bottom: 25vh;
+    right: 15vw;
+    width: min(370px, 13vw);
+    height: min(520px, 20vh);
+    z-index: -2;
+    border: 2px solid rgba(241, 241, 241, 0.24);
+}
+
+.image-7 {
+    top: 45vh;
+    left: 5vw;
+    width: min(340px, 11vw);
+    height: min(480px, 17vh);
+    z-index: -1;
+border: 2px solid rgba(241, 241, 241, 0.24);
+}
+
+.image-8 {
+    top: 5vh;
+    right: 45vw;
+    width: min(400px, 15vw);
+    height: min(520px, 17vh);
+    z-index: -5;
+    border: 2px solid rgba(241, 241, 241, 0.24);
+}
+
+/* Center title */
+.center-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    text-align: center;
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .image-1, .image-2, .image-3, .image-4, 
+    .image-5, .image-6, .image-7, .image-8 {
+        width: min(120px, 25vw) !important;
+        height: min(150px, 20vh) !important;
+    }
+    
+    .image-1 { top: 10vh; left: 5vw; }
+    .image-2 { top: 8vh; right: 5vw; }
+    .image-3 { top: 25vh; right: 10vw; }
+    .image-4 { bottom: 40vh; left: 8vw; }
+    .image-5 { bottom: 20vh; left: 25vw; }
+    .image-6 { bottom: 5vh; right: 5vw; }
+    .image-7 { top: 40vh; left: 2vw; }
+    .image-8 { top: 30vh; right: 35vw; }
+}
+
+@media (max-width: 480px) {
+    .image-1, .image-2, .image-3, .image-4, 
+    .image-5, .image-6, .image-7, .image-8 {
+        width: min(100px, 30vw) !important;
+        height: min(120px, 18vh) !important;
+    }
+}
+

@@ -21,10 +21,6 @@
 
 }
 
-/* *{
-    border: 2px solid red;
-} */
-
 @font-face {
     font-family: 'Tenor-Sans';
     src: url('font/Tenor_Sans/TenorSans-Regular.ttf') format('truetype');
@@ -41,7 +37,10 @@
     font-family: 'seveneleven';
     src: url('font/7ELEVEN.ttf') format('truetype');
 }
-
+@font-face {
+    font-family: 'baisteach';
+    src: url('font/Baisteach.ttf') format('woff2');
+}
 
 html {
     scroll-behavior: smooth;
@@ -52,26 +51,23 @@ html {
     padding: 0;
 }
 
-
-
 body{
+    display: flex;
+    gap: 1rem;
+    flex-flow: column wrap;
+
+    align-items: center;
+
     background-image: 
         url("image/black-mamba.png"), 
         linear-gradient(to top, var(--color-one) 38%, var(--color-three) 75%, var(--color-four) 100%);
     background-attachment: fixed;
-    min-height: 100%;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* gap: 2rem; */
-
+    /* min-height: 100%; */
 }
 
-/* ################### LINE accros screen  */
+/* LINE accros screen  */
 hr {  
     border: 3px dashed var(--color-three);
-    margin: 10rem;   
     width: 100%;
 }
 
@@ -84,61 +80,585 @@ header{
 }
 
 p{
+    /* default font */
     font-family: sans-serif;
 }
 
- /* make scrollbar transparent */
-::-webkit-scrollbar {
-    visibility: hidden;
-    width: 0px;
-    height: 0px;
-    background: transparent;
+.container{
+    /* flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto; */
+    flex: 1 1 auto;
+}
+    /* --------------- Introduction --------------- */
+#introduction-area{
+    display: flex;
+    gap: 3rem;
+    flex-flow: column wrap;
+    align-items: center;
+
 }
 
-.container{
-    width: 85%;
-    height: 90%;
-    padding: 2rem;
+#hero-header{
+    color: rgba(255, 255, 255, 0.945);
+    -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.671);  
+
+    width: 70%;
+    height: 900%;
+    min-height: 20rem;
+
+    position: relative;
+    overflow: hidden;
+
+    text-align: left;
+    margin: auto;
+    margin-bottom: 25%;
+    margin-top: 7%;
+    padding: 2.5%;
+
+    font-family: baisteach;
+    font-size: 800%;
+
+
+    text-shadow: 
+        2px 2px 20px rgb(129, 201, 243),
+        20px -10px 20px rgba(245, 245, 245, 0.493),
+        32px -20px 20px rgba(245, 245, 245, 0.229);
+}
+#hero-header p{
+    font-size: 35%;
+    text-shadow: 
+        2px 2px 20px rgb(129, 201, 243),
+        20px -10px 20px rgba(245, 245, 245, 0.493),
+        32px -20px 20px rgba(245, 245, 245, 0.229);
+    text-align: right;
+}
+
+#game-navigation{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+    gap: 10%;
+
+    width: 90%;
+
+    -moz-border-radius-topright: 30px 20px;
+    -moz-border-radius-topleft: 30px 20px;
+    border-top: 4.5px dotted var(--color-four);
+    border-bottom: 4.5px dotted var(--color-four);
+    border-radius: 2rem 2rem 2rem 2rem / 1.5rem 1.5rem 1.5rem 1.5rem;
+    
+    font-family: baisteach;
+    font-size: 200%;
+
+    margin: auto;
+}
+
+#game-navigation a{
+    height: auto;
+    width: auto;
+
+    color: rgba(249, 251, 255, 0.96);
+
+    text-decoration: none;
+    background:  no-repeat 0 100%;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 2px;
+    transition: all .3s ease;
+
+    padding: 2%;
+}
+#game-navigation a:hover, a:focus {
+    background-size: 100% 2px;
+    color: aliceblue;
+    animation: shakes;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shakes{
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+      transform: rotate(2.5deg);
+    }
+    50%{
+      transform: rotate(-2.5deg);
+    }
+    75%{
+      transform: rotate(2.5deg);
+    }
+    100%{
+      transform: rotate(-2.5deg);
+    }
+}
+
+
+#about-me-section{
+    width: 80%;
+    height: 120%;
+
+    margin: 0 5%;
+
+    display: flex;
+    flex-flow: column wrap;
+
+    align-items: start;
+    padding: 2.5%;
+
+    background-image: url("image/lined-paper-2.png");
+    background-color: rgba(246, 252, 255, 0.144);
+    color: rgba(249, 251, 255, 0.96);
+
+    border: 3px solid rgba(27, 27, 32, 0.644);  
     border-radius: 2rem 2rem 2rem 2rem / 1.5rem 1.5rem 1.5rem 1.5rem;
 }
 
-/* ------------------------------------- Animate on Scroll -----------------------------------  */
-
-.aScroll{
-    animation: appear linear;
-    /* animation applies based on the amount in which the object is in view of the screen */
-        /* eg. half on the screen 50% of animation is applaied. 99% at the top of the viewport, 99% applied */
-    animation-timeline: view(); 
-    /* Animation start to happen when the obj enteres the viewport */
-        /* cover 40%: Animation finishes when the object enters 40% of the viewport */
-    animation-range: entry 0% cover 45%;
+#about-me-section h1{
+    position: relative;
+    line-height: 2.8rem;
+    font-size: 175%;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
 }
 
-@keyframes appear{
-    from{
-        opacity: 0;
-        scale: .95;
-        transform: translateY(200px);
-    }
-    to{
+#about-me-section h1::before {
+    content: "";
+    position: absolute;
+    left: 7%;
+    bottom: 16px;
+    width: 125px;
+    height: 12px;
+    transform: skew(-12deg) translateX(-30%);
+    background: rgba(238,111,87,0.5);
+    z-index: -1;
+}
+
+#about-me-section p{
+    line-height: 2.8rem;
+    font-size: 150%;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+
+}
+#about-me-section a{
+    color: #22be82;
+}
+
+
+#contacts{
+    display: inline;
+    width: auto;
+    height: 120%;
+    place-items: center;
+    border-bottom: 4.5px dotted var(--color-four);
+}
+#contacts p{
+    color: rgba(249, 251, 255, 0.80);
+    font-size: 225%;
+    font-weight: 650;
+    letter-spacing: 5px;
+    font-family: monospace;
+}
+
+    /* --------------- END Introduction --------------- */
+
+
+    /* --------------- Content Area --------------- */
+#content-area{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+
+    width: 100%;
+    height: auto;
+
+    margin: 10rem 0rem;
+    gap: 10rem;
+}
+
+/* Contains the image header and the main contents. */
+.content-container{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+/* on hover START */
+.content-container:hover{
+    width: 100%;
+    overflow: visible;
+}
+
+.content-header:hover{
+    overflow: visible;
+
+    .description{
         opacity: 1;
-        scale: 1;
-        transform: translateY(0px);
+        width: 40%;
+        visibility: visible;
+    }
+    img{
+        width: 60%;
+        height: 120%;
+
+        border-radius: 8.1rem;
+        cursor: pointer;
+    }
+    h1{
+        transform: translateY(200px);
+        opacity: 0;
+        visibility: hidden;
     }
 }
 
-/* ------------------------------------- Sideprojects -----------------------------------  */
-.side-project-header{
-    font-size: 525%;
-    font-family: baisteach;
-    color: rgb(230, 243, 255);
+/* on hover END*/
 
-    margin-bottom: 6%;
-    text-shadow: 
-        2px 2px 20px rgb(0, 0, 0);
+.content-header{
+    position: relative;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 30rem;
+    overflow: hidden;
+
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
-#monitor-projection{
+.content-header h1{
+    position: absolute;
+
+    font-size: 620%;
+    font-weight: 900;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+
+    transform: translateY(0px);
+    opacity: 1;
+    visibility: visible;
+
+    transition: all .6s ease-out;
+}
+
+
+.content-header img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    transition: all ease-out .8s; 
+    will-change: width, height, border-radius;
+    
+    /* Preventing Image from Being Draggable or Selectable */
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.content-header .description{
+    position: relative;
+    width: 0%;
+    height: auto;
+    text-align: center;
+
+    visibility: hidden;
+    font-size: 3rem;
+    font-family: 'Times New Roman', Times, serif;
+    color: whitesmoke;
+    opacity: 0;
+
+    transition: all ease-out .8s .005s; 
+    will-change: visibility, opacity, width, overflow;
+
+    flex: 1 ; /* Take up 50% of the flexbox */
+    z-index: -10;
+}
+
+                /* --------------- Main Content START --------------- */
+.main-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+    width: clamp(600px, 90%, 1600px);
+    height: clamp(830px, 100%, 1600px);
+    height: 830px;
+
+    margin: auto;
+    padding: 2%;
+
+    visibility: hidden;
+    opacity: 0;
+    max-height: 0;
+    overflow-x: hidden;
+    object-fit: fill;
+
+    transition: all var(--transition-speed) ease-in-out;
+    will-change: opacity, max-height;
+    z-index: 1;
+}
+.main-content.active {
+    opacity: 1;
+    margin-top: 5rem;
+    visibility: visible;
+    max-height: 100%;
+}
+
+
+.main-content p{
+    color: white;
+}
+
+#game1-mc{
+    background-image: url("image/wallpaper.png");
+
+    p,
+    li,
+    .details,
+    .summary{
+        color: black;
+        font-family:'Arial Narrow Bold', sans-serif;
+        font-weight: 500;
+        -webkit-text-stroke: .4px rgba(3, 19, 94, 0.788);  
+    }
+    iframe,
+    img{
+        border: 4.5px dashed rgb(255, 255, 255);
+        -moz-border-radius-topright: 10px 20px;
+        -moz-border-radius-topleft: 10px 20px;  
+    }
+    h1,
+    .title{
+        font-family: brown-sugar;
+        -webkit-text-stroke: 2px rgb(0, 0, 0); 
+    }
+    a{
+        color: #22be82;
+    }
+    hr{
+        border: 3px dashed var(--color-three);
+    }
+}
+
+#game2-mc{
+    background-image: url("image/VG2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    p,
+    li,
+    .details,
+    .summary{
+        color: lightblue;
+        font-family:'Arial Narrow Bold', sans-serif;
+        font-weight: 500;
+        -webkit-text-stroke: .4px rgba(145, 165, 255, 0.788);  
+    }
+    iframe,
+    img{
+        border: 4.5px dashed rgb(129, 204, 230);
+        -moz-border-radius-topright: 10px 20px;
+        -moz-border-radius-topleft: 10px 20px;  
+    }
+    h1,
+    .title{
+        color: lightblue;
+        font-family: ddaftt;
+        -webkit-text-stroke: 1.5px black;  
+    }
+    a{
+        color: #22be82;
+    }
+    hr{
+        border: 3px dashed var(--color-three);
+    }
+}
+
+#game3-mc{
+    background-image: url("image/95bg2.png");
+
+    p,
+    li,
+    .details,
+    .summary{
+        color: whitesmoke;
+        font-family:'Arial Narrow Bold', sans-serif;
+        font-weight: 500;
+        -webkit-text-stroke: .2px rgba(255, 255, 255, 0.596);  
+    }
+    iframe,
+    img{
+        border: 4.5px solid red;
+        outline: 2px solid white;
+        -moz-border-radius-topright: 10px 20px;
+        -moz-border-radius-topleft: 10px 20px;   
+    }
+    h1,
+    .title{
+        font-family: seveneleven;
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.671);  
+        color: #D88853;
+        font-weight: 100; 
+    }
+    a{
+        color: #D88853;
+    }
+    hr{
+        border: 3px solid white;
+    }
+}
+    
+.video-item figcaption {
+    font-size: 1.2rem;
+
+    margin-top: 8px;
+    transition: opacity 0.3s ease;
+}
+    
+.video-item{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: auto;
+    width: 80%;
+    height: auto;
+    gap: 1rem;
+    flex: 1;
+}
+
+.video-item iframe {
+    width: 90%;
+    height: 100%;
+    min-height: 550px;
+    object-fit: cover;
+    flex: 1;
+}
+
+.video-item figcaption {
+    font-size: 120%;
+}
+
+                                /* --------------- Grid Layouts Start --------------- */
+
+.grid {
+    position: relative;
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    padding: 3%;
+    box-sizing: border-box;
+    flex: 1;
+
+    font-size: 150%;
+    letter-spacing: 1.8px;
+    word-spacing: 2.6px;
+    line-height: 2rem;
+}
+
+.grid-1 {
+    display: grid; 
+    grid-template-columns: 50% 50%; 
+    grid-template-rows: .25fr .3fr .5fr; 
+    gap: 1px 6px 2px;
+    
+    grid-template-areas: 
+        "title title"
+        "details details"
+        "summary summary";
+}
+
+.title { 
+    grid-area: title;
+    font-size: 400%;
+    height: auto;
+}
+.details {
+    grid-area: details;
+    font-size: 90%;
+}
+.summary {
+    grid-area: summary;
+
+}
+
+.grid-2 {
+    display: grid; 
+    grid-template-columns: 70% 30%; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 30px 30px;
+    
+    grid-template-areas: 
+        "text image"
+        "text image";
+}
+
+.grid-3 {
+    display: grid; 
+    grid-template-columns: 30% 70%; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 30px 30px;
+    
+    grid-template-areas: 
+        "image text"
+        "image text";
+}
+
+.grid-4 {
+    display: flex;
+    flex-flow: column wrap;
+
+    p{
+        text-align: justify;
+    }
+}
+.text {
+    grid-area: text;
+
+}
+
+.image { 
+    grid-area: image;
+
+    height: auto;
+    width: auto;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 5rem;
+
+    /* Ensures images fit within their container without distortion */
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border: 2px dotted white;
+        border-radius: 2rem;
+    }
+}
+
+                                /* --------------- Grid Layouts END  --------------- */
+                /* --------------- Main Content END --------------- */
+    /* --------------- END Content Area --------------- */
+
+    /* --------------- Side-Content Area --------------- */
+#side-content-area{
     position: relative;
     display: flex;
     flex-flow: column nowrap;
@@ -153,103 +673,20 @@ p{
 
     margin-top: 2%;
     margin-bottom: 4%;
+
+    gap: -20px;
 }
-
-#hotbar{
-    position: relative;
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: start;
-    justify-content: start;
-
-    min-height: 15%;
-    max-width: 90%;
-    height: auto;
-    width: auto;
-
-    color: aliceblue;
-    font-size: large;
-    background-color: #313131;
-    border: 4px solid black;
-
-    overflow-y: hidden;
-    overflow-x: scroll;
-
-    pointer-events: click; /* unclicable*/
-}
-#hotbar h3{
-    padding: .5rem;
-    font-size: 1.4rem;
-}
-#hotbar button{
-    position: relative;
-    height: 100%;
-    min-width: 128px;
-    width: auto;
-
-    flex: 1;
-    color: aliceblue;
-    font-family: 'Tenor-Sans';
-    font-size: large;
-    text-align: center;
-
-    background-color: #31313157;
-    opacity: .5;
-    overflow: show;
-    z-index: 2;
-
-    padding: 1rem;
-}
-
-#hotbar button img {
-    margin: auto;
-    padding: 1rem;
-    max-height: 100%; 
-    max-width: 100%; 
-    width: auto;
-    height: auto;
-}
-
-#hotbar button:hover{
-    transform: scale(1.1);
-    opacity: 1.0;
-    z-index: 3;
-    border: 4px solid black;
-    border-left: 4px solid rgba(0, 0, 0, 0.75);
-    border-right: 4px solid rgba(0, 0, 0, 0.75);
-}
-#hotbar button.active{
-    opacity: 1.2;
-    z-index: 2;
-    border-left: 4px groove rgba(200, 200, 200, 0.85);
-    border-right: 4px groove rgba(200, 200, 200, 0.85);
-}
-/* Create the MC container background image */
-#hotbar button::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-height: 100%;
-    height: auto;
-    background-image: url("image/MC_hotbar_icon.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-}
-
-#monitor{
+#side-content-display{
     position: relative;
     display: flex;
     flex-flow: column nowrap;
 
     width: 100%;
-    min-height: 80%;
+    min-height: 90%;
     height: auto;
     padding: 4%;
 
-    margin-bottom: 2.5%;
+    margin-bottom: -5%;
 
     font-size: larger;
     color: var(--font-color-2);
@@ -265,12 +702,15 @@ p{
     border-bottom: 6px solid var(--font-border-color-2);
     border-right: 6px solid var(--font-border-color-2);
 }
-
-
-.monitor-content {
+#Placeholder{
+    display: block;
+    width: 100%;
+    height: 80%;
+    padding: 0%;
+}
+.side-content{
     display: none;
     position: relative;
-    animation: animateUp 0.6s;
     
     min-height: 20%;
     height: auto;
@@ -289,9 +729,7 @@ p{
     border-bottom: 3px solid var(--font-border-color-1);
     border-right: 3px solid var(--font-border-color-1);
 }
-
-
-.monitor-content img{
+.side-content img{
     margin: 1rem;
     padding: .25rem;
     max-height: 90%; 
@@ -302,7 +740,7 @@ p{
     border: 2px dashed rgba(245, 245, 245, 0.85);
 }
 
-.monitor-content iframe{
+.side-content iframe{
     aspect-ratio: 16 / 9;
     background: #333;
     border-radius: 12px;
@@ -317,8 +755,6 @@ p{
     border: 2px dashed rgba(245, 245, 245, 0.85);
 }
 
-
-
 @keyframes animateUp{
     from{
         bottom:-90%;
@@ -329,365 +765,162 @@ p{
         opacity:1;
     };
 }
-
-/* ------------------------------------------ Scroll to the top button ------------------------------------------ */ 
-
-#scrollToTopBtn {
-    position: fixed;
-    bottom: 30px;
-    right: 45px;
-    background-color: #ffffff;
-    background-image: url("image/lined-paper.png");
-    color: rgb(0, 0, 0);
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    visibility: hidden;
-    cursor: pointer;
-
-    opacity: 0;
-    animation: rotateAnimation 5s linear infinite;
-    transition: opacity var(--transition-speed) ease-in-out;
-    z-index: 5;
+/* animation component that can be added to make smt roll up. */
+.animate-up{
+    animation: animateUp 0.6s;
 }
 
-#scrollToTopBtn:hover {
-    background-color: #333;
+/* wrap hotbar in a scrollable container. Required for tooltips */
+#hotbar-wrapper {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    min-height: 10rem;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: clip; /* Changed from visible to clip */
+    padding-top: 45px; 
+
+    scrollbar-width: thin;
+}
+#hotbar{
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: start;
+    justify-content: start;
+    min-height: 15%;
+    max-width: 90%;
+    height: auto;
+    width: auto;
+    color: aliceblue;
+    font-size: large;
+
+    pointer-events: click; 
 }
 
-#scrollToTopBtn.visible {
-    visibility: visible;
-    opacity: 1;
-}
-
-/* Arrow icon inside button */
-#scrollToTopBtn::after {
-    content: "↑";
-    font-size: 28px;
-}
-
-@keyframes rotateAnimation {
-    0% {transform: rotateY(0deg) rotateZ(0deg);}
-    50% {transform: rotateY(180deg) rotateZ(5deg);}
-    100% {transform: rotateY(360deg) rotateZ(0deg);}
-}
-
-footer{
-    color: #9E7682;
-    background-color: #F5F2DB;
-    padding: 1rem;
-    font-size: smaller;
-    margin-top: 4rem;
-    background-image: url("image/lined-paper-2.png");
-}
-
-/* ------------------------------------------ Sidebar Contact ------------------------------------------ */
-
-#sidebar-open-button{
-    width: 40px;
-    height: 40px;
-
-    position: fixed;
-    top: 30px;
-    left: 45px;
-
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    border: none;
-    border-radius: 50%;
-
-    cursor: pointer;
-
-    visibility: hidden;
-    opacity: 0;
-
-    animation: rotateAnimation 5s linear infinite;
-    transition: opacity var(--transition-speed) ease-in-out;
-    z-index: 5;
-}
-
-#sidebar-open-button.visible {
-    visibility: visible;
-    opacity: 1;
-}
-
-#sidebar-opne-button:hover {
-    background-color: #333;
-}
-
-.sidebar-button{
-    display: block;
-    height:6%;
-    width:100%;
-
-    margin-bottom: 1rem;
-
-    border: 2px solid black;
-    font-size: var(--sidebar-button-font-size);
-}
-.sidebar-button:hover{
-    background-color: #000a1f77;
-}
-
-#sidebar-contact{
-    display: none;
-    position:fixed;
-    left: 0%;
-    top: 0%;
-    height:90%;
-    width:30%;
-
-    font-size: var(--sidebar-contact-font-size);
-    
-    /* background-color: var(--sidebar-background-color); */
-
-    z-index:4;
-    overflow:auto;
-
-    padding: 1.5rem;
-
-    animation: animateLeft 0.5s;
-}
-
-@keyframes animateLeft{
-    from{
-        transform: translateX(-60%);
-        opacity:0;
-        scale: .6;
-    } 
-    to{
-        transform: translateX(0);
-        opacity:1;
-        scale: 1;
-    };
-}
-
-.sidebar-item{
-    display: block;
-}
-
-/* ------------------------------------------ Image Modal  from W3schools------------------------------------------ */ 
-
-/* The Modal (background) */
-.modal {
-    display: none; 
-    position: fixed; 
-    z-index: 10;
-    padding-top: 175px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.85);
-    background-color: rgba(0, 0, 0, 0.85);
-    color: #eeecec;
-
-}
-  
-  /* Modal Content (Image) */
-.modal-content {
-    margin: auto;
-    display: block;
-    height: 60%;
-    width: 60%;
-    max-width: 60vw;
-}
-  
-/* Caption of Modal Image (Image Text) - Same Width as the Image */
-#modal-caption {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
+#hotbar .tablink{
+    position: relative;
+    height: 7em;
+    min-width: 128px;
+    width: auto;
+    flex: 1;
+    color: aliceblue;
+    font-family: 'Tenor-Sans';
+    font-size: large;
     text-align: center;
-    color: #eeecec;
-    padding: 10px 0;
-    height: 150px;
-}
-  
-/* Add Animation - Zoom in the Modal */
-.modal-content, #modal-caption {
-    animation-name: zoom;
-    animation-duration: 0.6s;
-}
 
-/* Zoom in animation, when appearin/Pooping up */
-@keyframes zoom {
-    from {transform:scale(0)}
-    to {transform:scale(1)}
+    background-color: #313131;
+    border-top: 4px solid black;
+
+    opacity: .5;
+    overflow: visible;
+    z-index: 2;
+    padding: 1rem;
 }
-  
-  /* The Close Button */
-.close {
-    border: 2px solid rgba(48, 45, 45, 0.39);
-    width: 1800px;
-    height: 900px;
-    
+#hotbar .tablink img {
+    margin: auto;
+    padding: 1rem;
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+#hotbar .tablink:hover{
+    transform: scale(1.1);
+    opacity: 1.0;
+    z-index: 3;
+    border: 4px solid black;
+    border-left: 4px solid rgba(0, 0, 0, 0.75);
+    border-right: 4px solid rgba(0, 0, 0, 0.75);
+}
+#hotbar .tablink.active{
+    opacity: 1.2;
+    z-index: 2;
+    border-left: 4px groove rgba(200, 200, 200, 0.85);
+    border-right: 4px groove rgba(200, 200, 200, 0.85);
+}
+/* / Create the MC container background image / */
+#hotbar .tablink::before{
+    content: "";
     position: absolute;
-    top: 0px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 80px;
-    font-weight: bold;
-    transition: 0.3s;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+    background-image: url("image/MC_hotbar_icon.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
-  
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
+/* / tablink tooltip / */
+#hotbar .tablink .tooltiptext {
+    width: 100px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    text-shadow: 2px 2px 4px black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 100;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-30%);
+   
+    /* / Fade in tooltip - takes 1 second to go from 0% to 100% opac: / */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
 }
-  
-
-
-  /* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
-    .modal-content {
-      width: 100%;
-    }
+#hotbar .tablink:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+   
+    animation: gelatine 4s infinite;
 }
-
-@media screen and (max-width: 1600px) {
-    
-    html {
-        font-size: 12px;
-    }
+/* / Add a small arrow pointing down */ */
+#hotbar .tablink .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.9) transparent transparent transparent;
 }
-
-/* Media queries for responsive design */
-@media screen and (max-width: 1300px) {
-    
-    html {
-        font-size: 11px;
-    }
-    
-    #scrollToTopBtn {
-        width: 40px;
-        height: 40px;
-    }
-    #scrollToTopBtn::after {
-        content: "↑";
-        font-size: 20px;
-    }
+@keyframes gelatine {
+    from, to { transform: scale(1, 1) translateX(-50%); }
+    25% { transform: scale(0.95, 1.05) translateX(-50%); }
+    50% { transform: scale(1.05, 0.95) translateX(-50%); }
+    75% { transform: scale(0.925, 1.025) translateX(-50%); }
 }
+    /* --------------- END Side-Content Area --------------- */
 
-@media screen and (max-width: 992px) {
-    html {
-        font-size: 10px;
-    }
-    
-    .container {
-        width: 95%;
-        padding: 1.5rem;
-    }
-    
-    #scrollToTopBtn {
-        bottom: 30px;
-        right: 30px;
-        width: 40px;
-        height: 40px;
-    }
-    
-    #scrollToTopBtn::after {
-        font-size: 22px;
-    }
-    
-    .modal-content {
-        height: 70%;
-        width: 70%;
-        max-width: 70vw;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    html {
-        font-size: 10px;
-    }
-    
-    .close {
-        width: auto;
-        height: auto;
-        top: 15px;
-        right: 25px;
-        font-size: 60px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    html {
-        font-size: 10px;
-    }
-    
-    .container {
-        width: 98%;
-        padding: 1rem;
-        border-radius: 1rem 1rem 1rem 1rem / 1rem 1rem 1rem 1rem;
-    }
-    
-    
-    #scrollToTopBtn {
-        bottom: 20px;
-        right: 20px;
-        width: 35px;
-        height: 35px;
-    }
-    
-    #scrollToTopBtn::after {
-        font-size: 18px;
-    }
-    
-    .modal {
-        padding-top: 100px;
-    }
-    
-    .modal-content {
-        height: 80%;
-        width: 80%;
-        max-width: 80vw;
-    }
-    
-    #modal-caption {
-        width: 90%;
-        height: 100px;
-    }
-    
-    .close {
-        top: 10px;
-        right: 15px;
-        font-size: 40px;
-    }
-}
-
-
-/* Retro Game Style Music Player CSS */
-@font-face {
-    font-family: 'Pixel';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/jersey15/v3/_6_9EDzuROGsUuk2TWjiZYAg.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
+    /* ---------------------- Musicplayer START --------------------- */
 .StarrPlayer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        background-color: #000000;
-        border: 6px double var(--music-player-color-2);
-        color: var(--music-player-color-2);
-        width: 400px;
-        margin: auto;
-        /* margin-top: 12.5%;
-        margin-bottom: 22.5%; */
-        font-family: 'Pixel', monospace;
-        letter-spacing: 2.5px;
-        padding: 0;
-        box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #000000;
+    border: 6px double var(--music-player-color-2);
+    color: var(--music-player-color-2);
+
+    min-width: 300px;
+    max-width: 500px;
+    height: 700px;
+
+    margin: auto;
+    /* margin-top: 12.5%;
+    margin-bottom: 22.5%; */
+    font-family: 'Pixel', monospace;
+    letter-spacing: 2.5px;
+    padding: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+    z-index: 1000;
 }
 
 .SP-track-info {
@@ -696,6 +929,7 @@ footer{
     align-items: flex-start;
     flex-direction: column;
     width: 100%;
+    height: 100%;
     position: relative;
     padding: 0;
     border-bottom: 2px solid var(--music-player-color-1);
@@ -709,30 +943,32 @@ footer{
     flex-direction: row;
     background-color: var(--music-player-color-1);
     width: 100%;
+    height: 100%;
     padding: 8px 15px;
     box-sizing: border-box;
     border-bottom: 2px solid #000;
 }
 
 .SP-button {
-  background-color: transparent;
-  color: var(--music-player-color-2);
-  border: none;
-  cursor: pointer;
-  user-select: none;
-  font-size: 20px;
-  font-family: 'Pixel', monospace;
-  padding: 0;
+    background-color: transparent;
+    color: var(--music-player-color-2);
+    border: none;
+    cursor: pointer;
+    user-select: none;
+    font-size: 20px;
+    font-family: 'Pixel', monospace;
+    padding: 0;
 }
 
 /* Song selection area */
 .SP-track {
-  font-size: 3rem;
-  width: 100%;
-  background-color: #000;
-  text-align: center;
-  padding: 5px 0;
-  border-bottom: 2px solid var(--music-player-color-1);
+    font-size: 3rem;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    text-align: center;
+    padding: 5px 0;
+    border-bottom: 2px solid var(--music-player-color-1);
 }
 
 .SP-track-name {
@@ -882,4 +1118,182 @@ footer{
   box-sizing: border-box;
   text-align: left;
   border-bottom: 2px solid var(--music-player-color-2);
+}
+    /* ---------------------- Musicplayer END --------------------- */
+
+    /* ---------------------- Sidebar Area START --------------------- */
+#sidebar-open-button{
+    width: 40px;
+    height: 40px;
+
+    position: fixed;
+    top: 30px;
+    left: 45px;
+
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    visibility: hidden;
+    opacity: 0;
+
+    animation: rotateAnimation 5s linear infinite;
+    transition: opacity var(--transition-speed) ease-in-out;
+    z-index: 5;
+}
+
+#sidebar-open-button.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+#sidebar-opne-button:hover {
+    background-color: #333;
+}
+
+.sidebar-button{
+    display: block;
+    height:4%;
+    width:100%;
+
+    font-size: 100%;
+
+    margin-bottom: 1rem;
+
+    border: 2px solid black;
+}
+
+.sidebar-button:hover{
+    background-color: #000a1f77;
+}
+
+#sidebar-contact{
+    display: none;
+    position:fixed;
+    left: 0%;
+    top: 0%;
+    height:80%;
+    width:30%;
+
+    font-size: var(--sidebar-contact-font-size);
+    
+    /* background-color: var(--sidebar-background-color); */
+
+    z-index:4;
+    overflow:auto;
+
+    padding: 1.5rem;
+
+    animation: animateLeft 0.5s;
+}
+
+@keyframes animateLeft{
+    from{
+        transform: translateX(-60%);
+        opacity:0;
+        scale: .6;
+    } 
+    to{
+        transform: translateX(0);
+        opacity:1;
+        scale: 1;
+    };
+}
+
+.sidebar-item{
+    display: block;
+}
+    /* --------------- END Sidebar Area --------------- */
+
+    /* --------------- ScrollUp Button START --------------- */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 45px;
+    background-color: #ffffff;
+    background-image: url("image/lined-paper.png");
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    visibility: hidden;
+    cursor: pointer;
+
+    opacity: 0;
+    animation: rotateAnimation 5s linear infinite;
+    transition: opacity var(--transition-speed) ease-in-out;
+    z-index: 5;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #333;
+}
+
+#scrollToTopBtn.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Arrow icon inside button */
+#scrollToTopBtn::after {
+    content: "↑";
+    font-size: 28px;
+}
+
+@keyframes rotateAnimation {
+    0% {transform: rotateY(0deg) rotateZ(0deg);}
+    50% {transform: rotateY(180deg) rotateZ(5deg);}
+    100% {transform: rotateY(360deg) rotateZ(0deg);}
+}
+
+footer{
+    color: #9E7682;
+    background-color: #F5F2DB;
+    padding: 1rem;
+    font-size: smaller;
+    margin-top: 4rem;
+    background-image: url("image/lined-paper-2.png");
+}
+    /* --------------- ScrollUp Button END --------------- */
+
+    /* --------------- FadeIn --------------- */
+@keyframes fadeinall {
+    0% {
+        opacity: 1; }
+    97% {
+        opacity: 0; }
+    98% {
+        opacity: 0;
+        -webkit-transform: translateY(0);
+        transform: translateY(0); 
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+        z-index: -1; } 
+}
+
+#fadein {
+    opacity: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    background-color: var(--color-three);
+    z-index: 999;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation: fadeinall 1s normal both;
+    animation: fadeinall 1s normal both;
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s; 
 }

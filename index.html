@@ -2,18 +2,11 @@
 <html lang="en">
     <head>
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="project-style.css">
-        <link rel="stylesheet" href="introduction.css">
-        <link rel="stylesheet" href="fade-in.css">
-        <script rel="preload" src="scripts/content-container-script.js" async></script>
-        <script src="scripts/tabtitle.js" async></script>
+        <link rel="stylesheet" href="ParallaxFloatingImages.css">
         <script src="scripts/script.js" async></script>
         <script src="scripts/musicplayer.js" defer></script>
         <script>                    
-        // Ensure page starts at top on load and refresh
-            if ('scrollRestoration' in history) {
-                history.scrollRestoration = 'manual';
-            }
+            history.scrollRestoration = 'auto';
         </script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,41 +14,731 @@
 
         <title> - Shunde Zhang Game Development Portfolio - </title>
     </head>
+    <div id="fadein"></div>
     <body>
-        <div id="fadein"></div>
-    <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
-            <hr>    
-        <section>
-            <div id="hero-header" >
-                <header >UNDER CONSTRUCTION</header>
-                <p> See you soon :)</p>
+        <!-- START Introduction area -->
+        <section id="introduction-area" class="container">
+            <h1 id="hero-header" class="container">
+                Game Designer Portfolio
+                <p>by Shunde Zhang</p>
+            </h1>
+                <div class="floating-image image-1" data-speed="0.035">
+                    <img src="https://images2.imgbox.com/7f/cc/wBfSBitS_o.jpg" alt="Artistic image 1">
+                </div>
+                
+                <div class="floating-image image-2" data-speed="0.04">
+                    <img src="https://images2.imgbox.com/0f/e2/QDNs9kNQ_o.png" alt="Artistic image 2">
+                </div>
+                
+                <div class="floating-image image-3" data-speed="0.025">
+                    <img src="https://images2.imgbox.com/56/ce/TrimA7UT_o.png" alt="Artistic image 3">
+                </div>
+                
+                <div class="floating-image image-4" data-speed="0.035">
+                    <img src="https://images2.imgbox.com/15/62/IDVGeww5_o.png" alt="Artistic image 4">
+                </div>
+                
+                <div class="floating-image image-5" data-speed="0.065">
+                    <img src="https://images2.imgbox.com/e4/b3/TFC5OzU5_o.png" alt="Artistic image 5">
+                </div>
+                
+                <div class="floating-image image-6" data-speed="0.05">
+                    <img src="https://images2.imgbox.com/00/9c/dapMfWfR_o.png" alt="Artistic image 6">
+                </div>
+                
+                <div class="floating-image image-7" data-speed="0.045">
+                    <img src="https://images2.imgbox.com/55/f3/kN1UOKCw_o.png" alt="Artistic image 7">
+                </div>
+                
+                <div class="floating-image image-8" data-speed="0.035">
+                    <img src="https://images2.imgbox.com/d8/f9/f7gO0bZS_o.png" alt="Artistic image 8">
+                </div>
+            <nav id="game-navigation" class="container">
+                <a href="#Game1">Motel</a>
+                <a href="#Game2">Virtual Garden</a>
+                <a href="#Game3">9to5</a>
+                <a href="#side-content-area">Other</a>
+            </nav>
+            <section id="about-me-section" class="container">
+                <h1>ABOUT ME</h1>
+                <p>
+                    Creating art is the pursuit that I want to follow in life.
+                    Games are the ideal medium to fulfill this desire since they encapsulate a vast variety of artistic disciplines such as visual arts, narrative writing, and musical composition (to name the most prominent).
+                    Through this variety, game development is captivatingly complex, which allows one to learn and practice in so many fields of art. There will always be room to improve.
+                    <br>
+                    Some of my games can be played on my <a>Itch.io</a>. 
+                    <br>
+                    <br>
+                    (This website Portfolio is still a WiP :) )
+                </p>
+            </section>
+            <section id="contacts" class="container">
+                <p>Contact me: shunzhan15@gmail.com</p>
+            </section>
+        </section>
+        <!-- END Introduction area -->
+
+        <!-- START Content area -->
+        <section id="content-area">
+            <hr>
+            <!-- START Game 1 -->
+            <div id="Game1"></div>  <!-- For the nav -->
+            <div class="content-container container ">
+                <button class="content-header collapsible">
+                    <h1>WHITE YELLOWISH MOTEL</h1>
+                    <img src="image/WYMCover.png" rel="preload" importance="high" alt="White-Yellowish Motel" loading="lazy" role="listitem" unselectable="on">
+                    <div class="description"><i>
+                            A dusty motel from the 70ties<br>
+                            Wallpapers akin to madness and vomit<br>
+                            And a peephole that sees from the outside<br>
+                    </i></div>
+                </button>
+
+                <div id="game1-mc" class="main-content">
+                    <div class="grid-1 grid">
+                        <div class="title">WHITE YELLOWISH MOTEL</div>
+                        <div class="details">Made in: XXXX &emsp;&emsp;&emsp;&emsp;  Genre: XXXX &emsp;&emsp;&emsp;&emsp; Topics</div>
+                        <div class="summary">                                A story-driven resource management PC game about helping those less fortunate than you, without the certainty of a return, from the perspective of a motel owner.
+                                The player will manage gathering the daily rent of their inhabitants and consider their well-being, while they themselves are under the loom of their own quota.
+                                <br>
+                                While collecting rent or checking up on the residents the player inevitably will be confronted with their stories from the distance of a door that looks in from the outside. 
+                                <br>
+                                <br>
+                                This game is aimed at those who enjoy story-driven games where their choices matter and that lead to multiple different endings. 
+                                It also strives to make each playthrough unique for each player based on their decisions.
+                                <br>
+                                <br>
+                                The game is inspired by "The Yellow Wallpaper" and "No I'm not human". 
+                                <br>
+                        </div>
+                    </div>
+
+                    <div class="grid-2 grid">
+                        <div class="text">
+                            <h1>Gameplay</h1>
+                            <p>
+                                The core idea is to maintain a balance between the moods of all the inhabitants whilst also not neglecting your own goals.
+                                Pushing too hard for rent or being insensitive lowers their mood, potentially triggering negative consequences, such as them leaving completely or refusing to pay and leave. 
+                                <br>
+                                When a mood reaches its critical low it triggers their unique event, referred to as the <b>'Threshold'</b>,
+                                <br>
+                                which if not or poorly resolved can cause various issues, for example:
+                                <br>
+                                <ul>
+                                    <li>losing some of your wealth</li>
+                                    <li>a different inhabitant leaves</li>
+                                    <li>strongly affect the mood of others around</li>
+                                    <li>a combination of them</li>
+                                </ul>
+                            </p>
+                                                        <p>
+                                Causing a potential snowball effect of other tenants reaching their Threshold.
+                                <br>
+                                The limited mood forces the player to make more conscious choices and interactions with the characters, also the limited wealth of each inhabitant 
+                                makes the most optimal tactic for the player to interact with <b>all</b> the characters.
+                                <br>
+                                So carefully maneuvering the dialogues, getting to know the inhabitants on a deeper level, and planning out your finances will be mandatory strategies.
+                                <br>
+                            </p>
+                            <h1>Interactions</h1>
+                            <p>
+                                The game unfolds over 5-7 in-game days, with each playthrough featuring 8 randomly selected tenants from a pool of 12 unique characters. 
+                                <br>
+                                Their placement, financial situations, and personal stories create unique scenarios in each game. 
+                                <br>
+                                Multiple endings reflect your management style and the relationships you build.
+                                <br>
+                                <br>
+                                An energy system and the current amount of money that they have, which varies for each one, restrict how many tenants you can interact with each day. 
+                                <br>
+                                By limiting actions per day the player needs to consider with whom they want to interact with and how much.
+                                <br>
+                                Emphasizes making the right decision-making.
+                                <br>
+                                <br>
+                                An aspect to consider is that not all "correct" interactions lead to a reward or positive outcome.
+                                <br>
+                                Sometimes the player is rewarded with something unconventional, like an apple at the office desk or stickers that do not affect the gameplay.
+                            </p>
+                        </div>
+                        <div class="image">
+                            <img src="https://images2.imgbox.com/7f/cc/wBfSBitS_o.jpg" loading="lazy" alt="Artistic image 1">
+                            <img src="https://images2.imgbox.com/f5/62/moEWc3qF_o.png" loading="lazy" alt="Artistic image 2">
+                        </div>
+                    </div>
+
+                    <figure class="video-item">
+                        <iframe src="https://drive.google.com/file/d/1qrq3Iz71YneZmNaLyz3aPy2aKvU79IZN/preview" allow="autoplay" allowfullscreen></iframe> 
+                        <figcaption>Early Prototype</figcaption>
+                    </figure>   
+                    
+                    <div class="grid-3 grid">
+                        <div class="image">
+                            <img src="https://images2.imgbox.com/d8/f9/f7gO0bZS_o.png" loading="lazy" alt="Artistic image 1">
+                            <img src="https://images2.imgbox.com/ec/26/4aEWLPtO_o.png" loading="lazy" alt="Artistic image 2">
+                            <img src="https://images2.imgbox.com/9b/25/5ijHVy5x_o.png" loading="lazy" alt="Artistic image 2">
+                        </div>
+                        <div class="text">
+                            <h1>Dialogue, People, and Story</h1>
+                            <p>
+                                The main hardship in creating this game will be character dialogue, because of the number of characters in different thresholds and the inhabitants dialogue with each other. 
+                                <br>
+                                The current idea is to have each of the 12 characters have six <b>Moodpoints</b>, in which their dialogue would change based on their current mood.
+                                <br>
+                                <br>
+                                The dialogue system would use a basket method, similar to that of 'Hades', to pick out dialogue lines and reuse them only once all the other lines have been used.
+                                <br>
+                                With "Inhabitant-Interaction-Lines", a line that only gets said if two or more specific inhabitants are in the current playthrough, being placed on top of the priority list.
+                                <br>
+                                <br>
+                                Assuring for immersive conversations.
+                            </p>
+                            <h2>Characters</h2>
+                            <p>
+                                The characters are named after fictional characters who represent a type of mistery and/or suffering from societal injustice.
+                                <br>
+                                This helps set a foundation of who the characters are and a degree of familiarity. 
+                                <br>
+                                Some names used and where their misery stems from:
+                            </p>
+                            <ul>
+                                <li>Semyon - "Crime and Punishment" -> Villianation of severe addiction</li>
+                                <li>Joshep - "The Trial" -> Victims of scams</li>
+                                <li>Ellen - "I have no mouth and I must scream" -> Intersectional Discrimination</li>
+                            </ul>
+                            <br>
+                            <h2>Core idea</h2>
+                            <p> 
+                                The player isn't supposed to 'solve' the issue of the characters.
+                                <br>
+                                I don't intend on creating a story that makes everyone live happily ever after, yet also not a story that leaves everyone as miserably as they started.
+                                <br>
+                                <br>
+                                The problems these characters face aren't ones that can be solved over pep talks and friendly acts. These issues demand large changes in Social consciousness.
+                                <br>
+                                Rather, the dialogue and gestures of empathy are there to mend and support the characters and to spread awareness to the player to view those less fortunate with a more empathetic eye.
+                                <br>
+                                <br>
+                                Ideally, this game helps the player to confront and see others with more compassion and care. 
+                                <br>
+                                In a world that can turn its back on you for the smallest of weakness, it's important that at least the people, that are so close to be in the same shoes, have one ear to spare.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END Game 1 -->
+
+            <!-- START Game 2 -->
+            <div id="Game2"></div>  <!-- For the nav -->
+            <div id="Game2" class="content-container container">
+                <button class="content-header collapsible">
+                    <div class="description"><i>
+                            <br>A quiet breeze from the pc's fan. 
+                            <br>16-bit Bossa Nova can be heard. 
+                            <br>The taste of pixels is in the air. 
+                            <br>A virtual garden right at the desktop.
+                    </i></div>
+                    <h1>VIRTUAL GARDEN</h1>
+                    <img src="image/VGCover.png" rel="preload" importance="high" alt="Virtual Garden" loading="lazy" role="listitem" unselectable="on">
+                </button>
+
+                <div id="game2-mc" class="main-content">
+                    <div class="grid-1 grid">
+                        <div class="title">Virtual Garden</div>
+                        <div class="details">Made in: XXXX &emsp;&emsp;&emsp;&emsp;  Genre: XXXX &emsp;&emsp;&emsp;&emsp; Topics</div>
+                        <div class="summary">
+                            <p>
+                                This is a relaxing incremental game that can be played on the PC and Mobile, about using plant objects on grid tiles to produce currency. 
+                                <br>
+                                Furthermore, you can also buy items (garden tools) to increase the yield or production efficiency of the plants. 
+                                <br>
+                                <br>
+                                However, both items and plants take up limited space on the play area, which other plants require to function the most optimally.
+                                <br>
+                                Planning, organizing, and combining triplets of plants is required to let your garden flourish.
+                                <br>
+                                <br>
+                                <b>The game can be played on the browser</b> and has a saving feature (only when downloaded). 
+                                <br>
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="grid-3 grid">
+                        <div class="text">
+                            <h1>Gameplay</h1>
+                            <p>
+                                The player will be planting plants, that get more expensive the more they buy, organizing them on the play area, and waiting for them to produce currency to buy more plants.
+                                <br>
+                                When the player gets three of the same plants, it allows them to combine those to create a plant of a higher tier. 
+                                <br>
+                                The importance of planting the plants in the right spot lies in the way that the plants function.
+                                <br>
+                                For example, the yellow plant will trigger other plants in an area. 
+                                <ul>
+                                    <li>Tier 1: Will trigger a plant under it</li>
+                                    <li>Tier 2: Triggers left & right</li>
+                                    <li>Tier 3: In cross pattern</li>
+                                    <li>Tier 4: All tiles around the plant</li>
+                                </ul>
+                            </p>
+                            <p>
+                                Items can be bought in the shop (collapsable able on the right side of the screen) and are limited as well as
+                                having different likelihoods of appearing based on their rarity and the level of the shop. 
+                                <br>
+                                The ratio between rarity-shop to level-likelihood is based on that of <b>'Teamfight tactic'</b>.
+                                <br> 
+                                Additionally, to make the early game quicker, 'Sunshine' will fall, rewarding the player with currency upon click.
+                                <br>
+                                <br> 
+                                After gaining a specified amount of currency, crows will start to appear. These crows, when landed on a plant, will stop the plant from working.
+                                <br>
+                                They will fly away when hovered over. An additional prevention is to get a scarecrow. Crows won't fly on the tiles the scarecrow is covering.
+                                <br>
+                                <br>
+                                Further development plans are to create more plants, but also additional resources, furthermore increasing the strategic possibilities.
+                                <br>
+                                As well a prestige system. 
+                                <br>
+                                <br>
+                                I'm also considered adding an addition play area. The player would switch from one play area to the other. In this play area there would grow other stuff with different rules.
+                                <br>
+                            </p>
+                        </div>
+                        <div class="image">
+                            <img src="https://images2.imgbox.com/00/9c/dapMfWfR_o.png" loading="lazy" alt="Artistic image 1">
+                            <img src="https://images2.imgbox.com/2b/0e/nys183Og_o.png" loading="lazy" alt="Artistic image 1">
+                            <img src="https://images2.imgbox.com/1e/ee/F4JYeSWQ_o.png" loading="lazy" alt="Artistic image 1">
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="grid4 grid">
+                        <h1>Friction</h1>
+                        <p>
+                            Incremental game's main focus lies in the feeling of progression. From making little currency to making extraordinary absurd amounts of currency.
+                            But feeling progression is not just clicking one button over and over and seeing numbers rise, it needs to feel deserved and earned, and there needs to be time spent improving. 
+                            <br>
+                            <b>Friction is needed.</b>
+                            <br>
+                            <br>
+                        </p>
+                        <p>
+                            Friction here is the limited space that is used for both plants and items.
+                            <br>
+                            Either lots of plants or lots of tools?
+                            What do I remove to make space for the new objects?
+                            The items and plants are competing with each other as much as they work together.
+                            But just like in real life, it's better to have a few good tools than have your sheed filled with junk.
+                            <br>
+                            Also, each bought plant increases the price of the next one, so that even later into the game, it isn't too easy to get new plants.
+                            <br>
+                            <br>
+                            <br>
+                            Plants and tools are drawn by my Sister, the rest from an asset pack by <a href="https://sethbb.itch.io/">Sethbb</a>.
+                            <br>
+                            Plants were drawn in a different art style since the asset pack plants meshed too much to the background, and to highlight the plants as interactable objects.
+                            <br>
+                            <br>
+                            Special thanks to the <a href="https://www.youtube.com/@godotgamelab/videos">GodotGameLab Autobattler Tutorial</a> that helped me with many of the programming implementations.
+                        </p>
+                    </div>
+                    
+                    <!-- <figure class="video-item">
+                        <iframe src="https://drive.google.com/file/d/1qrq3Iz71YneZmNaLyz3aPy2aKvU79IZN/preview" allow="autoplay" allowfullscreen></iframe> 
+                        <figcaption>Early Prototype</figcaption>
+                    </figure>     -->
+
+                </div>
+            </div>
+            <!-- END Game 2 -->
+
+            <!-- START Game 3 -->
+            <div id="Game3"></div>  <!-- For the nav -->
+            <div id="Game3" class="content-container container">                
+                <button class="content-header collapsible">
+                    <h1>FROM 9to5</h1>
+                    <img src="image/9to5.png" rel="preload" importance="high" alt="Open9to5" loading="lazy" role="listitem" unselectable="on">
+                    <div class="description">                        
+                        <i>"Everything You Need, from 9 to 5. <br> The Office Hours Store. "</i>
+                    </div>
+                </button>
+
+                <div id="game3-mc" class="main-content">
+                    <div class="grid-1 grid">
+                        <div class="title">9to5</div>
+                        <div class="details">Made in: XXXX &emsp;&emsp;&emsp;&emsp;  Genre: XXXX &emsp;&emsp;&emsp;&emsp; Topics</div>
+                        <div class="summary">
+                            <p>
+                                A Roguelike Tower Defence PC game that's about earning points through waves instead of surviving them.
+                                <br> 
+                                A casual game with simplistic mechanics but takes clever strategicing to master. Ideal for a quick 30-minute game session or to do at the side as you're on a call.
+                                <br>
+                                <br>
+                                Set with the theme of a supermarket and taking inspiration from "Balantro" and Warcraft 3 Tower defense custom maps. 
+                                <br>
+                                As well as inspired by the previous game showcased "Virtual Garden".
+                            </p>
+                        </div>
+                    </div>
+
+                    <figure class="video-item">
+                        <iframe src="https://drive.google.com/file/d/16tD3wYGGsJIDfJMZp3IX-H-e5Lwc14Bk/preview" allow="autoplay" allowfullscreen class="image-container-img"></iframe> 
+                        <figcaption>Early Prototype</figcaption>
+                    </figure>
+
+                    <hr>
+
+                    <div class="grid-2 grid">
+                        <div class="text">
+                            <h1>Gameplay</h1>
+                            <p>
+                                <br>
+                                Construct a maze-like structure to direct the customer wave to walk past your shop stands.
+                                <br> 
+                                Each stand that get's passes by a customer has a chance to activate (the customer buys the product).
+                                <br>
+                                With each stand having a limited amount of products for each week.
+                                <br>
+                                A stand can have various effects, from simply adding points, to pushing the customer back a few tiles, to duplicating the customer.
+                            </p>
+                            <p>
+                                After each day the player can choose one of three stands to place into the shop.
+                                <br>
+                                Stands are free and cost only board space.
+                                <br>
+                                <br>
+                                Positioning of the stands is key since later on the points reach astronomically high, 
+                                the player needs to fully use stands, push the customers back, force them into a loop (for a while), and manipulate the odds, to achieve the point quota.
+                                <br>
+                                Leaving an unintentional gap opens up a new path for the customers to walk through and potentially skip important point-winning stands.
+                                <br>
+                                Each point counts, afterall, you'll have a weekly quota to meet.
+                                <br> 
+                                But luckly, your previously earned points/money follows you into the next weeks.  
+                                <br>
+                                <br>
+                                An option for a longer session may exist, extending the play area on both sides by 8x8 tiles.
+                                Allowing for 64 more stands to be placed.
+                                Also increasing the needed weekly quota.
+                                <br>
+                            </p>
+                        </div>
+                        <div class="image">
+                            <img src="https://images2.imgbox.com/79/d8/ir3dgkmO_o.png" alt="CC1_img3" loading="lazy">
+                            <img src="https://images2.imgbox.com/e4/b3/TFC5OzU5_o.png" alt="CC1-img3" loading="lazy">
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="grid-4 grid">
+                        <h1>Stands</h1>
+                            <h2>Teleporter</h2>
+                                <p>
+                                    Requires two teleports to be connected and be assigned 'Entrance' or 'Exit'.
+                                    <br>
+                                    Customers upon stepping on the 'Entrance' will have their position changed to the 'Exit'.
+                                    <br>
+                                    The amount of teleportations will be limited to prevent infinite loops.
+                                    <br>
+                                    <br>
+                                </p>
+                            <h2>"Overnight Stay"</h2>
+                                <p>
+                                    A limited amount of Customers that pass by are taken out of the wave and stored in this stand.
+                                    <br>
+                                    At the end of the week, stored customers are sent out.
+                                    <br>
+                                    Allowing players to have one big final showdown to meet the quota at the end of the week where they'll be having more stands.
+                                    <br>
+                                    <br>
+                                </p>
+                            <h2>Advertisement</h2>
+                                <p>
+                                    A low chance that this triggers, but if it does, an additional customer will appear next wave.
+                                    <br>
+                                    There's also a hidden chance, even lower, and one-time only, to double the customers for the next wave.
+                                    <br>
+                                    <br> 
+                                </p>
+                            <br>
+                            <h1>Customers</h1>
+                            <h2>Stingy</h2>
+                                <p>
+                                    Has a lower chance to activate stands.
+                                    <br>
+                                    Making them undesirable customers to have in store.
+                                    <br> 
+                                    But they are affected twice as much by stands that affect buy-willingness.
+                                    <br>
+                                    <br>
+                                </p>
+                            <h2>Thief</h2>
+                                <p>
+                                    Chance to reduce the product amount without any gain.
+                                    <br>
+                                    About every tenth of a customer is a thief.
+                                    <br>
+                                    Some stands can detect and remove them.
+                                    <br>
+                                    <br>
+                                </p>
+                            <h2>Jumper</h2>
+                                <p>
+                                    Disregards stands blocking their path and will jump over them,
+                                    <br>
+                                    if there is a one-block space behind that stand.
+                                    <br>
+                                    <br>
+                                </p>
+                    </div>
+                    
+                    <hr>
+
+                </div>
+            </div>
+            <!-- END Game 3 -->
+            <hr>
+        </section>
+        <!-- END Content area -->
+
+        <!-- START Side-Content area --> 
+        <section id="side-content-area">
+            <div id="side-content-display">
+                <div id="Placeholder" class="side-content projected-content animate-up active">
+                </div>
+                <div id="Fade" class="side-content projected-content animate-up">
+                    <p>An extended 'GDQuest 3D-platformer template' used in an environment that focuses on open-world exploration of secrets and platforming.</p>
+                    <iframe src="https://drive.google.com/file/d/17iKfSZfy7OZKzj0KRoOFIeR4PeEOBy9d/preview" loading="lazy" allow="autoplay" allowfullscreen></iframe>
+                    <iframe src="https://drive.google.com/file/d/1GwoGyiYBhDnodBKCLOWKuyV_Cv34vWLC/preview" loading="lazy" allow="autoplay" allowfullscreen></iframe>
+                    <iframe src="https://drive.google.com/file/d/10mbkCk5h1VrPdmwqwarL_D2pT04CW6nY/preview" loading="lazy" allow="autoplay" allowfullscreen></iframe>
+                    <p>
+                        A weekend scene I produced to test my capabilities. It includes 3D movement and pickup notes with different backgrounds and text.<br>
+                        The idea came to me on a late-night subway ride as the lights from the tunnels reflected into the one unlit cargo.
+                    </p> 
+                </div>
+                
+                <div id="Left" class="side-content projected-content animate-up">
+                    <p>An extended 'GDQuest 3D-platformer template' used in an environment that focuses on open-world exploration of secrets and platforming.</p>
+                    <iframe src="https://drive.google.com/file/d/1Yv-s0vxkSiOLJnysfWHbWXju627e0JbP/preview" loading="lazy" allow="autoplay" allowfullscreen></iframe>
+                    <p>
+                        A weekend scene I produced to test my capabilities. It includes 3D movement and pickup notes with different backgrounds and text.<br>
+                        The idea came to me on a late-night subway ride as the lights from the tunnels reflected into the one unlit cargo.
+                    </p> 
+                </div>
+                
+                <div id="Right" class="side-content projected-content animate-up">
+                    <p>
+                        A weekend scene I produced to test my capabilities. It includes 3D movement and pickup notes with different backgrounds and text.<br>
+                        The idea came to me on a late-night subway ride as the lights from the tunnels reflected into the one unlit cargo.
+                    </p> 
+                    <iframe src="https://drive.google.com/file/d/1tFCLPaiq8qsLJtAq1W-jxGMdKMP1vQ4t/preview" loading="lazy" allow="autoplay" allowfullscreen></iframe> 
+                    <p>
+                        A weekend scene I produced to test my capabilities. It includes 3D movement and pickup notes with different backgrounds and text.<br>
+                        The idea came to me on a late-night subway ride as the lights from the tunnels reflected into the one unlit cargo.
+                    </p> 
+                </div>
+
+                <div id="Top" class="side-content projected-content animate-up">
+                    <img src="https://images2.imgbox.com/0f/e2/QDNs9kNQ_o.png" loading="lazy" class="image-container-img"> 
+                    <p>My first public game made in 3 days for the 'Untitled Gamejam' on itch.io. You're an automation program tasked with doing the digital paperwork of a CEO. 
+                        Sorting the emails, by dragging and dropping them in the bin or into a folder, and hiring proper applicants.
+                    </p>
+                    <img src="https://images2.imgbox.com/e3/e4/UrIeVpKa_o.png" loading="lazy" class="image-container-img">
+                    <p>
+                        However, as the CEO announces that they're leaving, you'll attempt to cause as much havoc as possible, by deleting important emails and hiring unqualified applicants, 
+                        until the CEO returns back. Playable <a href="https://honigcake.itch.io/all-in-a-days-work">here</a>.
+                    </p> 
+                </div>
+                
+                <div id="Bottom" class="side-content projected-content animate-up">
+                    <img src ="https://images2.imgbox.com/de/7c/pLaiEilg_o.png" loading="lazy" class="image-container-img">
+                    <p>
+                        An experimental game I made to test my skills in creating ambience in Godot 4.2. I also added a few simple puzzle elements. The game can be played <a href="https://honigcake.itch.io/ambienttwister">here</a>.
+                    </p>
+                    <img src ="https://images2.imgbox.com/9e/79/xou9tmz4_o.png" loading="lazy" class="image-container-img">
+                    <img src ="https://images2.imgbox.com/56/ce/TrimA7UT_o.png" loading="lazy" class="image-container-img">
+                </div>
+                
+                <div id="Zoom" class="side-content projected-content animate-up">
+                    <img src="https://images2.imgbox.com/87/e3/jm2VZDwF_o.png" loading="lazy" class="image-container-img"> <p>Staircase before <br> (continues indefinitely)</p> 
+                    <img src="https://images2.imgbox.com/85/65/BN4d7uxK_o.png" loading="lazy" class="image-container-img"> <p>Staircase after a timer runs out.</p> 
+                    <p>It is the center of the Greater Tokyo Area, and the most populous metropolitan area in the world.</p>
+                    <img src="https://images2.imgbox.com/d8/40/sy5Tleo3_o.png" loading="lazy" class="image-container-img"> 
+                    <p>
+                        Staircase based on the end of the first episode of twin peaks.
+                        <br>I intended to make a game where you climb up different staircases with Euclidic and liminal puzzles.
+                        <br>(The above staircases were also planned for this game idea.)
+                    </p>
+                </div>
+
+                <div id="Zoom2" class="side-content projected-content animate-up">
+                    <img src="https://images2.imgbox.com/55/f3/kN1UOKCw_o.png" loading="lazy" class="image-container-img">
+                    <p>
+                        'Bluecube'<br>A blender light practice project that I'm quite fond off. 
+                    </p> 
+                </div>
+
+                <div id="Zoom3" class="side-content projected-content animate-up">
+                    <img src="https://images2.imgbox.com/87/e3/jm2VZDwF_o.png" loading="lazy" class="image-container-img"> <p>Staircase before <br> (continues indefinitely)</p> 
+                    <img src="https://images2.imgbox.com/85/65/BN4d7uxK_o.png" loading="lazy" class="image-container-img"> <p>Staircase after a timer runs out.</p> 
+                    <p>It is the center of the Greater Tokyo Area, and the most populous metropolitan area in the world.</p>
+                    <img src="https://images2.imgbox.com/d8/40/sy5Tleo3_o.png" loading="lazy" class="image-container-img"> 
+                    <p>
+                        Staircase based on the end of the first episode of twin peaks.
+                        <br>I intended to make a game where you climb up different staircases with Euclidic and liminal puzzles.
+                        <br>(The above staircases were also planned for this game idea.)
+                    </p>
+                </div>
+
+                <div id="Zoom4" class="side-content projected-content animate-up">
+                    <img src="https://images2.imgbox.com/55/f3/kN1UOKCw_o.png" loading="lazy" class="image-container-img"> 
+                    <p>'Bluecube'<br>A blender light practice project that I'm quite fond off. </p> 
+                </div>
+
+                <div id="Zoom5" class="side-content projected-content animate-up">
+                    <p>This website. I started learning html and css in t he summer of 2024. Preparing a portfoilio to sent of for the Univeristy of Colne. It has since then become a weekend (and somethimes in-weeks as well) hobby. Here's are differnt intterations of the portfolio</p> 
+                </div>
+            </div>
+            <div id="hotbar-wrapper">
+                <div id="hotbar">
+                    <button class="tablink" onclick="openLink(event, 'Fade')">
+                        NonEucl
+                        <span class="tooltiptext">JOURNAL</span>
+                    </button>
+                    <button class="tablink" onclick="openLink(event, 'Left')">
+                        Left
+                        <span class="tooltiptext">JOURNAL</span>
+                    </button>
+                    <button class="tablink" onclick="openLink(event, 'Right')">
+                        Right
+                        <span class="tooltiptext">JOURNAL</span>
+                    </button>
+                    <button class="tablink" onclick="openLink(event, 'Top')">
+                        Top
+                        <span class="tooltiptext">JOURNAL</span>
+                    </button>
+                    <button class="tablink" onclick="openLink(event, 'Bottom')">
+                        Bottom
+                        <span class="tooltiptext">JOURNAL</span>
+                    </button>
+                    <button class="tablink" onclick="openLink(event, 'Zoom')">
+                        Zoom
+                        <span class="tooltiptext">JOURNAL</span>
+                    </button>
+                    <button class="tablink" onclick="openLink(event, 'Zoom2')">
+                        Zoom
+                        <span class="tooltiptext">JOURNAL</span>
+                    </button>
+                    <button class="tablink" onclick="openLink(event, 'Zoom3')">
+                        Zoom
+                        <span class="tooltiptext">JOURNAL</span>
+                    </button>
+                    <button class="tablink" onclick="openLink(event, 'Zoom4')">
+                        Zoom
+                        <span class="tooltiptext">JOURNAL</span>
+                    </button>
+                    <button class="tablink" onclick="openLink(event, 'Zoom5')">
+                        Website
+                        <span class="tooltiptext">JOURNAL</span>
+                    </button>
+                    <button class="tablink" onclick="openLink(event, 'Zoom3')">
+                        Zoom
+                        <span class="tooltiptext">JOURNAL</span>
+                    </button>
+                    <button class="tablink" onclick="openLink(event, 'Zoom4')">
+                        Zoom
+                        <span class="tooltiptext">JOURNAL</span>
+                    </button>
+                    <button class="tablink" onclick="openLink(event, 'Zoom5')">
+                        Website
+                        <span class="tooltiptext">JOURNAL</span>
+                    </button>
+                    <button class="tablink" onclick="openLink(event, 'Zoom3')">
+                        Zoom
+                        <span class="tooltiptext">JOURNAL</span>
+                    </button>
+                    <button class="tablink" onclick="openLink(event, 'Zoom4')">
+                        Zoom
+                        <span class="tooltiptext">JOURNAL</span>
+                    </button>
+                    <button class="tablink" onclick="openLink(event, 'Zoom5')">
+                        Website
+                        <span class="tooltiptext">JOURNAL</span>
+                    </button>
+                </div>
             </div>
         </section>
+        <!-- END Side-Content area -->  
 
-        <hr>
+        <!-- ---------------- Scroll to top button ----------------->
+        <button id="scrollToTopBtn" aria-label="Scroll to top">
+            <span class="visually-hidden"></span>
+        </button>
+        
+        <!-- START Sidebar area -->  
+        <button id="sidebar-open-button" class="sidebar-button" onclick="openSidebar()">♪</button>
 
+        <div id="sidebar-contact">
+            <button class="sidebar-item sidebar-button" onclick="closeSidebar()">&times;</button>
 
-    <!-- Website fade in. -->
+            <!-- Musicplayer Start -->
+            <div class="StarrPlayer">
+                <!-- Header for the music player -->
+                <div class="SP-header">Music Player</div>
+
+                <!-- Instructions line -->
+                <div class="SP-artist"><span class="SP-artist-name">Please, select a song </span></div>
+                
+                <!-- Song list section -->
+                <div id="SP-song-list">
+                    <!-- These will be populated from your song_data_absolute array -->
+                    <button class="SP-song-item">Gordon</button>
+                    <button class="SP-song-item">Dreaming Algernon</button>
+                    <button class="SP-song-item">Somewhere in Summer</button>
+                    <button class="SP-song-item">Short Winter Wind</button>
+                    <button class="SP-song-item">12.11.2023</button>
+                </div>
+                
+                <!-- Original elements (hidden but kept for compatibility) -->
+                <div class="SP-track-info">
+                    <div class="SP-track"><span class="SP-track-name">---</span></div>
+                </div>
+
+                        <!-- Navigation section at the bottom -->
+                <div class="SP-navigation">
+                    <div class="SP-duration">
+                        <span class="SP-duration-current">0:00</span>
+                        <div class="SP-progress-bar">
+                            <div class="SP-progress-bar-fill">
+                                <div class="SP-progress-bar-knob"></div>
+                            </div>
+                        </div>
+                        <span class="SP-duration-total">X:XX</span>
+                    </div>
+                </div>
+
+                <!-- Control buttons at the top -->
+                <div class="SP-button-row">
+                    <div class="SP-prev SP-button">|◄◄</div>
+                    <div class="SP-play SP-button">▶</div>
+                    <div class="SP-pause SP-button">❚❚</div>
+                    <div class="SP-next SP-button">►►|</div>
+                    <div class="SP-stop SP-button">⊗</div>
+                    <div class="SP-loop SP-button">↻</div>
+                </div>
+            </div>
+        </div>
+        <!-- END Sidebar area -->  
+
+    </body>
+
+    <script src="scripts/ParallaxFloatingImages.js"></script>
     <script src="scripts/fade-in.js" async></script>
-    <script>document.addEventListener("DOMContentLoaded", function() {
-        const fadeElements = document.querySelectorAll('.fade-in');
-        
-        function checkVisibility() {
-          fadeElements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            const elementVisible = 150; // How many pixels from the viewport edge to trigger
-            
-            if (elementTop < window.innerHeight - elementVisible) {
-              element.classList.add("visible");
-            }
-          });
-        }
-        
-        // Check visibility on load
-        checkVisibility();
-        
-        // Check visibility on scroll
-        window.addEventListener("scroll", checkVisibility);
-      });
-    </script>
-</html>
+ßß
+</html> 
